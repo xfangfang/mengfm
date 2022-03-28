@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 from scrapy.http import Request
 
 
-DOWNLOAD_PATH = os.path.join(os.path.dirname(__file__), '../public/data')
+DOWNLOAD_PATH = os.path.join(os.path.dirname(__file__), '../docs/data')
 
 
 def change2local(show_id, url):
@@ -40,6 +40,9 @@ class MengfmPipeline1:
         # script_info
         info['show_icon'] = change2local(id, info['show_icon'])
         info['show_cover'] = change2local(id, info['show_cover'])
+        info['script_info']['script_icon'] = change2local(id, info['script_info']['script_icon'])
+        info['script_info']['script_cover'] = change2local(id, info['script_info']['script_cover'])
+
         for i in info['script_info']['script_role']:
             i['role_icon'] = change2local(id, i['role_icon'])
 

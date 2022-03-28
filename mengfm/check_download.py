@@ -2,7 +2,7 @@ import os
 import json
 from urllib.parse import urlparse
 
-data_path = os.path.join(os.path.dirname(__file__), '../public/data')
+data_path = os.path.join(os.path.dirname(__file__), '../docs/data')
 print(data_path)
 
 for root, dirs, files in os.walk(data_path):

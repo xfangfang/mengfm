@@ -68,7 +68,7 @@ ITEM_PIPELINES = {
    'mengfm.pipelines.MengfmPipeline1': 301,
 }
 
-FILES_STORE = os.path.join(os.path.dirname(__file__), '../public/data')
+FILES_STORE = os.path.join(os.path.dirname(__file__), '../docs/data')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

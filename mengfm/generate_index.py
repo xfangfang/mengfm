@@ -1,7 +1,7 @@
 import os
 import json
 
-data_path = os.path.join(os.path.dirname(__file__), '../public/data')
+data_path = os.path.join(os.path.dirname(__file__), '../docs/data')
 print(data_path)
 
 data = []

@@ -4,7 +4,7 @@
 
 ### 如何记录自己的广播剧
 
-1. fork项目，删除 `public/data` 下的demo数据  
+1. fork项目，删除 `docs/data` 下的demo数据  
 2. 修改 `mengfm/spiders/meng_user.py` 中的 `items` 列表，此列表为单个广播剧的id列表，关于如何获取id列表请看附录  
 3. 运行爬虫：`scrapy crawl user`  
 4. 检查爬虫结果：`python check_download.py` （可能存在部分图片未下载成功，这是因为爬虫设置了不重复下载，在 `mengfm/popelines.py` 设置 `dont_filter` 为True重新爬虫即可）  
