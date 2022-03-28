@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>mp3剧本演绎秀在线收听-麦萌对手戏</title>
+	<meta name="keywords" content="在线收听,mp3录音" />
+	<meta name="description" content="欢迎收听剧本演绎秀" />
+	<meta itemprop="name" content="麦萌官网,麦萌对手戏,写剧本,配音" />
+    <meta itemprop="description" content="首款手机约戏神器！求师傅、找伙伴、找CP、练戏感、求眼熟！来麦萌对手戏就可以了！这里是声控、配音、PIA戏爱好者的聚集地！还可以在这里写属于自己的剧本，让更多人来演绎！" />
+    <link href="./favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/pclayout-d53383e15e.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
+	<script type="text/javascript" src="./assets/js/equipment.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<header id="header-content">
+		<a id="user-link" href="./index.html">
+			<img alt="麦萌对手戏" id="logo" src="./assets/image/logo.png" style="margin-top: -4px;">
+		</a>
+	</header>
+
+	<section id="main">
+		<link rel="stylesheet" type="text/css" href="./assets/css/jquery.mCustomScrollbar.css">
+		<div class="main">
+			<div class="left">
+				<div id="show">
+					<div id="showContainer">
+						<div id="showTitle">
+							<h1 id="show-title">标题</h1>
+						</div>
+						<img id="cover" src="">
+						<div id="dialogues">
+							<img class="role-icon" id="role-icon" src="./assets/image/user-default-icon.png">
+							<div class="dialogue">
+								<span id="role-name" class="role-name" style="color: #CCCCCC;">旁白:</span><br/>
+								<span id="dialogue-content" class="dialogue-content"></span>
+							</div>
+						</div>
+					</div>
+					<div id="controlBar">
+						<img id="playIcon" src="./assets/image/play-icon.png" onclick="playShow();">
+						<img id="pauseIcon" class="hide" src="./assets/image/pause-icon.png" onclick="pauseShow();">
+						<div id="progressBar">
+							<div id="progressAll">
+								<div id="progressIcon"></div>
+							</div>
+						</div>
+						<div id="currentTime"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="right">
+				<div class="user-info">
+					<img class="user-icon" id="user-icon" src="">
+					<span class="user-name" id="user-name">用户</span>
+					<p class="show-intro" id="show-intro">介绍</p>
+				</div>
+				<br/>
+				<div class="user-info" id="role-info"></div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="./assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="./assets/js/pcPlayer.js"></script>
+	<script>
+		(function($){
+			$(window).on("load",function(){
+				$(".right .show-info").mCustomScrollbar({
+					theme : "mymeng-show"
+				});
+
+				$(".right .user-info").mCustomScrollbar({
+					theme : "mymeng-show"
+				});
+			});
+		})(jQuery)
+	</script>
+
+	<!-- player -->
+	<script type="text/javascript">
+		function getQueryString(name) {
+			let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			let r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		}
+
+		let show_id = getQueryString('show')
+		if(!show_id){
+			console.log('错误的请求')
+		} else {
+			console.log(show_id)
+		}
+
+		if(equipment()['mobile']){
+			window.location.href=`./mobile_show.html?show=${show_id}`;
+		}
+
+		let evalShowInfo = {}
+		$.ajax({
+			url : './data/'+show_id+'/info_local.json',
+			type : 'get',
+			async: false,
+			beforeSend : function(){
+
+			},
+			success : function(data){
+				console.log(data)
+				evalShowInfo = eval(data)
+
+			},
+			error : function(){
+				console.log('error getting show info')
+			}
+		})
+
+		//初始化界面
+		$("#show-title").text(evalShowInfo['script_info']['script_name'])
+		$("#user-name").text(evalShowInfo['user_info']['user_name'])
+		$("#show-intro").text(evalShowInfo['show_intro'])
+		$("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
+		$("#cover").attr('src', evalShowInfo['show_cover'])
+		let first_dialogue = evalShowInfo['dialogues'][0]
+		if(first_dialogue['role_name'])
+			$("#role-name").text(first_dialogue['role_name']+":")
+		$("#dialogue-content").text(first_dialogue['dialogue_content'])
+		let roles = evalShowInfo['script_info']['script_role']
+		for(let r in roles){
+			let role = $('<div><img class="user-icon" src="'+ roles[r]['role_icon'] +
+					'"><span class="user-name">'+roles[r]['role_name']+
+					'</span><p class="show-intro">'+roles[r]['role_intro']+'</p></div>')
+			$("#role-info").append(role)
+			if(first_dialogue['role_name'] === roles[r]['role_name']){
+				$("#role-icon").attr('src', roles[r]['role_icon'])
+			}
+		}
+
+
+
+		//初始化播放器
+		var playerData = {
+			type : 'show',
+			playInfo : evalShowInfo,
+			playerEle : 'showContainer',
+			controlBar : 'controlBar',		//控制栏dom元素的id
+			callBack : {
+				error : function(msg){
+					alert(msg);
+				},
+
+				onloaded : function(obj){
+				}
+			}
+		};
+		var player = new player(playerData);
+
+		//播放演绎秀
+		function playShow(){
+			player.play();
+		}
+
+		//暂停演绎秀
+		function pauseShow(){
+			player.pause();
+		}
+
+	</script>
+
+</body>
+</html>
+

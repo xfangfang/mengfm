@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>热门演绎秀mp3在线收听-麦萌对手戏</title>
+	<meta name="keywords" content="热门,演绎秀,收听" />
+	<meta name="description" content="欢迎收听麦萌对手戏的热门演绎秀，首款手机约戏神器！求师傅、找伙伴、找CP、练戏感、求眼熟！来麦萌对手戏就可以了！" />
+	<meta itemprop="name" content="麦萌官网,麦萌对手戏,写剧本,配音" />
+    <meta itemprop="description" content="首款手机约戏神器！求师傅、找伙伴、找CP、练戏感、求眼熟！来麦萌对手戏就可以了！这里是声控、配音、PIA戏爱好者的聚集地！还可以在这里写属于自己的剧本，让更多人来演绎！" />
+    <link href="./favicon.ico" rel="shortcut icon" />
+    <link href="./assets/css/pclayout-d53383e15e.css" rel="stylesheet" type="text/css">
+	<style >
+		.show-content{
+			width: 150px;
+			margin: 10px;
+		}
+		#show-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		#main {
+			width: 100%;
+			background-color: #fff;
+		}
+		#footer-content #content  {
+			width: 100%;
+		}
+		#header-content {
+			width: 100%;
+		}
+	</style>
+	<script type="text/javascript" src="./assets/js/equipment.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="./assets/js/jquery.lazyload.min.js"></script>
+</head>
+<body>
+	<header id="header-content">
+		<img alt="麦萌对手戏" id="logo" src="./assets/image/logo.png" style="margin-top: -4px;"  >
+	</header>
+
+	<section id="main">
+		<link rel="stylesheet" type="text/css" href="./assets/css/pclabels_index.css">
+<div class="main">
+	<div id="all-show">
+		<h1 class="title font-dark-grey">/ 热门作品 /</h1>
+		<div id="show-list">
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	let evalShowInfo = {}
+	$.ajax({
+		url : './data/info.json',
+		type : 'get',
+		async: false,
+		beforeSend : function(){
+
+		},
+		success : function(data){
+			console.log(data)
+			evalShowInfo = eval(data)
+
+		},
+		error : function(){
+			console.log('error getting show info')
+		}
+	})
+
+	console.log(evalShowInfo)
+
+	let next_page = 'pc_show.html'
+	if(equipment()['mobile']){
+		next_page = 'mobile_show.html'
+	}
+
+
+	for(i in evalShowInfo){
+		let show = $(`<div class="show-content">
+<a href="${next_page}?show=${evalShowInfo[i]['show_id']}">
+<img alt="要住在三楼" class="show-icon lazy" data-original="${evalShowInfo[i]['show_cover']}">
+</a>
+<p class="script-name">
+<a class="font-dark-grey" href="${next_page}?show=${evalShowInfo[i]['show_id']}" title="">${evalShowInfo[i]['script_name']}</a></p>
+<p class="show-intro font-grey">${evalShowInfo[i]['show_intro']}</p></div>`)
+		$("#show-list").append(show)
+	}
+
+
+	$(function(){
+		$("img.lazy").lazyload({
+			 failure_limit : 150
+		});
+	});
+</script>	</section>
+
+	<footer id="footer-content">
+		<div id="content">
+			<div class="site-friendly-link" style="text-align: center">
+				<span>麦萌的纪念站</span>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+

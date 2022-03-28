@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://m.mengfm.com/show/* -->
+<html data-dpr="1" style="font-size: 39px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>mp3剧本演绎秀在线收听-麦萌对手戏</title>
+
+	<meta name="flexible" content="initial-dpr=1">
+	<!-- 申明页面是移动友好的 -->
+	<meta name="HandheldFriendly" content="true">
+	<!-- 允许用户使用全屏模式浏览 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- 当用户使用全屏浏览时，将状态条设置为黑色 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="application-device" content="mobile">
+	<!-- 双核浏览器 使用webkit渲染页面 -->
+	<meta name="renderer" content="webkit">
+	<meta name="keywords" content="在线收听,mp3录音">
+	<meta name="description" content="欢迎收听剧本演绎秀">
+
+	<!-- icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="bookmark" type="image/x-icon" href="./favicon.ico">
+
+	<script type="text/javascript" src="./assets/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="./assets/js/loaders.css.js"></script>
+	<script type="text/javascript" src="./assets/js/Utils.js"></script>
+	<script type="text/javascript" src="./assets/js/mobilePlayer.js"></script>
+	<script type="text/javascript" src="./assets/js/equipment.js"></script>
+	<script type="text/javascript" src="./assets/js/flexible_css.js"></script>
+	<script type="text/javascript" src="./assets/js/flexible.js"></script><meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/loaders.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/showplay-98e61c1cde.css">
+    <script src="./assets/js/Utils.js"></script>
+</head>
+<body style="font-size: 12px;">
+	<div class="container">
+		<header>
+			<div class="menu">
+				<a href="javascript:history.go(-1);"><img class="back-icon pull-left" src="./assets/image/back-black-icon.png"></a>
+				<a href="./index.html"><img class="home-icon pull-right" src="./assets/image/home-black-icon.png"></a>
+				<h1 id="show-title">标题</h1>
+			</div>
+		</header>
+		<section id="showContainer" style="position:relative;z-index:1;width:100%;height:390px;background-color:black;display:block;overflow:hidden;">
+            <div id="showPlay">
+            <img id="showCover" src="">
+                <div id="showDialogue">
+                    <div id="roleInfo">
+                        <img id="roleIcon" src="./assets/image/user-default-icon.png">
+                        <span id="roleName"></span>
+                    </div>
+                    <div id="lines"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="show-info-content">
+            <div class="show-info">
+                <div class="user-icon-box">
+                    <img alt="作者" class="user-icon no-img-src" id="user-icon" src="">
+                </div>
+                <span class="user-name" id="user-name">作者</span>
+                <p class="show-intro" id="show-intro">简介</p>
+            </div>
+            <a class="script-info" >
+                <span class="script-title">剧本</span>
+                <div class="script-cover-box">
+                    <img alt="" class="script-cover" id="script-cover" src="">
+                </div>
+
+                <div class="name-info">
+                    <span class="script-name"></span>
+                    <div class="editor-name" id="editor-name">编剧：</div>
+                </div>
+            </a>
+
+            <div class="role-info" id="role-info">
+                <span class="role-main-title">主演</span>
+            </div>
+        </section>
+
+        <script>
+            function getQueryString(name) {
+                let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                let r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+            }
+
+            let show_id = getQueryString('show')
+            if(!show_id){
+                console.log('错误的请求')
+            } else {
+                console.log(show_id)
+            }
+
+
+            var browser = equipment()
+            var utils = new Utils();
+            var series_id = 0;
+            if(!browser['mobile']){
+                window.location.href=`./pc_show.html?show=${show_id}`;
+            }
+
+
+            let evalShowInfo = {}
+            $.ajax({
+                url : './data/'+show_id+'/info_local.json',
+                type : 'get',
+                async: false,
+                beforeSend : function(){
+
+                },
+                success : function(data){
+                    console.log(data)
+                    evalShowInfo = eval(data)
+
+                },
+                error : function(){
+                    console.log('error getting show info')
+                }
+            })
+
+            //初始化界面
+            $("#show-title").text(evalShowInfo['script_info']['script_name'])
+            $("#user-name").text(evalShowInfo['user_info']['user_name'])
+            $("#show-intro").text(evalShowInfo['show_intro'])
+            $("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
+            $("#showCover").attr('src', evalShowInfo['show_cover'])
+            $("#script-cover").attr('src', evalShowInfo['show_cover'])
+            $("#editor-name").text(`编剧：${evalShowInfo['script_info']['script_author']['content']}`)
+            let roles = evalShowInfo['show_role']
+            for(let r in roles){
+                let role = $(`
+                <a class="role" >
+                    <div class="role-icon-box no-img-src">
+                        <img alt="" class="user-icon" src="${roles[r]['user_icon']}">
+                    </div>
+                    <div>
+                        <span class="user-name ">${roles[r]['user_name']}</span>
+                    </div>
+                    <div class="role-name">${roles[r]['role_name']}</div>
+                </a>`)
+                $("#role-info").append(role)
+            }
+
+            //初始化播放器
+            var playerData = {
+                type : 'show',
+                playInfo : evalShowInfo,
+                playerEle : 'showContainer',
+                callBack : {
+                    error : function(msg){
+                        alert(msg);
+                    },
+
+                    onloaded : function(obj){
+                    }
+                }
+            };
+            var player = new player(playerData);
+
+        </script>
+
+
+	</div>
+	<footer class="footer">
+		<div id="loading" class="ball-clip-rotate text-center hide">
+			<div></div>
+		</div>
+	</footer>
+
+
+<!--layer务必放在文档底部-->
+<script type="text/javascript" src="./assets/js/showplay.js"></script>
+</body></html>

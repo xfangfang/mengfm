@@ -1,0 +1,257 @@
+.main{
+    margin:20px 0
+}
+.main .left{
+    width:700px;
+    background-color:#fff;
+    padding:15px;
+    display:inline-block;
+    margin-right:15px;
+    border-radius:6px
+}
+@media screen and (max-width:1400px){
+    .main .left{
+        width:580px
+    }
+}
+#videoBox{
+    height:100%;
+    background-color:#000
+}
+#videoBox #videoPlay{
+    width:100%;
+    height:100%
+}
+#showContainer{
+    position:relative;
+    overflow:hidden
+}
+#showTitle{
+    width:100%;
+    top:0;
+    background-color:rgba(255,255,255,.5);
+    position:absolute;
+    padding:10px 0;
+    text-align:center;
+    font-size:22px
+}
+#showTitle h1{
+    color:#ec9504;
+    margin:0;
+    font-size:22px
+}
+#cover{
+    width:100%;
+    min-height:550px
+}
+#dialogues{
+    position:absolute;
+    bottom:40px;
+    width:600px;
+    left:50%;
+    transform:translateX(-50%);
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%)
+}
+@media screen and (max-width:1400px){
+    #dialogues{
+        width:500px
+    }
+}
+#dialogues .role-icon{
+    width:50px;
+    border-radius:50%;
+    margin-left:10px
+}
+#dialogues .dialogue{
+    background-color:rgba(0,0,0,.5);
+    color:#fff;
+    padding:20px 10px;
+    border-radius:6px;
+    margin-top:-10px;
+    word-break:break-all
+}
+#controlBar #pauseIcon,#controlBar #playIcon{
+    cursor:pointer
+}
+#controlBar{
+    margin:10px 0;
+    display:flex;
+    display:-webkit-flex;
+    display:-moz-flex;
+    align-items:center;
+    position:relative
+}
+#controlBar #progressBar{
+    position:relative;
+    border-radius:100px;
+    border:1px solid #ec9504;
+    height:15px;
+    width:550px;
+    margin-left:15px
+}
+@media screen and (max-width:1400px){
+    #controlBar #progressBar{
+        width:450px
+    }
+}
+#controlBar #progressBar #progressAll{
+    height:100%;
+    background-color:#ec9504;
+    width:0;
+    border-radius:100px;
+    position:absolute
+}
+#controlBar #progressBar #progressIcon{
+    height:25px;
+    width:25px;
+    cursor:pointer;
+    border-radius:50%;
+    border:3px solid #fff;
+    background-color:#ec9504;
+    position:absolute;
+    top:-6px;
+    right:-12.5px;
+    box-shadow:1px 1px 1px rgba(0,0,0,.55)
+}
+#controlBar #currentTime{
+    position:absolute;
+    right:-10px;
+    top:50%;
+    transform:translateY(-50%);
+    -webkit-transform:translateY(-50%)
+}
+#damooText{
+    vertical-align:middle;
+    display:inline-block
+}
+.main .right{
+    width:440px;
+    height:300px;
+    display:inline-block;
+    vertical-align:top
+}
+@media screen and (max-width:1400px){
+    .main .right{
+        width:360px
+    }
+}
+.main .right .user-info{
+    background-color:#fff;
+    padding:15px;
+    border-radius:6px;
+    height:100%;
+    overflow:hidden
+}
+.main .right .user-info .user-icon{
+    width:45px;
+    border-radius:50%;
+    margin-right:10px
+}
+.main .right .user-info .user-name{
+    display:inline-block;
+    color:#3171bd
+}
+.main .right .user-info .show-intro{
+    margin-top:10px;
+    color:#555
+}
+.main .right .show-info{
+    background-color:#fff;
+    padding:15px;
+    border-radius:6px;
+    margin-top:10px;
+    height:601px;
+    overflow:hidden
+}
+@media screen and (max-width:1400px){
+    .main .right .show-info{
+        height:482px
+    }
+}
+.main .right .show-info .gift-icon{
+    width:30px
+}
+.main .right .show-info .show-gift a{
+    width:40px;
+    display:inline-block;
+    text-align:center;
+    vertical-align:top;
+    margin:0 3px
+}
+.main .right .show-info .show-gift .user-icon{
+    width:30px;
+    border-radius:50%
+}
+.main .right .show-info .gift-total{
+    display:inline-block;
+    color:#555;
+    margin-top:7px
+}
+.main .right .show-info .gift-num{
+    display:inline-block;
+    color:#999;
+    margin-top:5px
+}
+.main .right .show-info .show-comment{
+    margin-top:20px
+}
+.main .right .show-info .show-comment .comment{
+    margin-bottom:10px
+}
+.main .right .show-info .show-comment .comment-info{
+    display:inline-block;
+    vertical-align:middle;
+    width:240px
+}
+.main .right .show-info .show-comment .comment .user-icon{
+    width:40px;
+    border-radius:50%;
+    margin-right:15px;
+    vertical-align:top
+}
+.main .right .show-info .show-comment .comment .user-name{
+    color:#3171bd
+}
+.main .right .show-info .show-comment .comment .comment-time{
+    color:#999
+}
+.main .right .show-info .show-comment .comment .script-comment-sound{
+    width:120px;
+    height:42px;
+    padding:5px 0;
+    border-radius:100px;
+    border:1px solid #ccc;
+    cursor:pointer
+}
+.main .right .show-info .show-comment .comment .sound-wave-icon{
+    height:30px;
+    width:30px;
+    position:absolute
+}
+.main .right .show-info .show-comment .comment .sound-time{
+    margin-top:.5rem;
+    position:absolute;
+    right:1rem
+}
+.main .right .show-info .show-comment .comment .progress{
+    height:40px;
+    padding:5px 0;
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    border-radius:100px;
+    background-color:#ff0
+}
+#loadMoreComment{
+    padding:10px;
+    text-align:center
+}
+#loadMoreComment a{
+    color:#ec9504;
+    cursor:pointer
+}
+#loadMoreComment a:hover{
+    border-bottom:1px solid #ec9504
+}
