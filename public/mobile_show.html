@@ -126,10 +126,11 @@
             $("#show-title").text(evalShowInfo['script_info']['script_name'])
             $("#user-name").text(evalShowInfo['user_info']['user_name'])
             $("#show-intro").text(evalShowInfo['show_intro'])
-            $("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
-            $("#showCover").attr('src', evalShowInfo['show_cover'])
+            $("#user-icon").attr('src', evalShowInfo['script_info']['script_icon'])
+            $("#showCover").attr('src', evalShowInfo['script_info']['script_cover'])
             $("#script-cover").attr('src', evalShowInfo['show_cover'])
-            $("#editor-name").text(`编剧：${evalShowInfo['script_info']['script_author']['content']}`)
+			if(evalShowInfo['script_info']['script_author'])
+            	$("#editor-name").text(`编剧：${evalShowInfo['script_info']['script_author']['content']}`)
             let roles = evalShowInfo['show_role']
             for(let r in roles){
                 let role = $(`
