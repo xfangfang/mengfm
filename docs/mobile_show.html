@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0034)https://m.mengfm.com/show/* -->
 <html data-dpr="1" style="font-size: 39px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>mp3剧本演绎秀在线收听-麦萌对手戏</title>
+	<title>剧本演绎秀在线收听-麦萌对手戏</title>
 
 	<meta name="flexible" content="initial-dpr=1">
 	<!-- 申明页面是移动友好的 -->
@@ -31,6 +31,17 @@
 	<link rel="stylesheet" type="text/css" href="./assets/css/loaders.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/showplay-98e61c1cde.css">
+	<style>
+		.script-intro{
+			background: white;
+			border-bottom: 1px solid #eee;
+			padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+		}
+		.role-info{
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+	</style>
     <script src="./assets/js/Utils.js"></script>
 	<script>
 	var _hmt = _hmt || [];
@@ -80,10 +91,27 @@
                 </div>
 
                 <div class="name-info">
-                    <span class="script-name"></span>
-                    <div class="editor-name" id="editor-name">编剧：</div>
+                    <span class="script-name" id="script-name">剧本</span>
+                    <div class="editor-name" id="show-add-time"></div>
                 </div>
             </a>
+
+			<div class="role-info" id="author-info">
+                <span class="role-main-title">编剧：</span>
+				<a class="role" >
+                    <div class="role-icon-box no-img-src">
+                        <img alt="" class="user-icon" id="author-icon" src="">
+                    </div>
+                    <div>
+                        <span class="user-name" id="author-name"></span>
+                    </div>
+                    <div class="role-name" id="author-intro"></div>
+                </a>
+
+            </div>
+			<div class="script-intro">
+			<span id="script-intro"></span>
+			</div>
 
             <div class="role-info" id="role-info">
                 <span class="role-main-title">主演</span>
@@ -113,6 +141,22 @@
                 window.location.href=`./pc_show.html?show=${show_id}`;
             }
 
+			_hmt.push(["_trackEvent","meng","mobile",show_id])
+
+			function timestampToTime(timestamp) {
+				try{
+					let  date = new Date(timestamp * 1000);
+					let Y = date.getFullYear() + '年';
+					let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '月';
+					let D = date.getDate() + '日 ';
+					let h = date.getHours() + ':';
+					let m = date.getMinutes()// + ':';
+					// let s = date.getSeconds();
+					return Y+M+D+h+m;
+				} catch (e) {
+					return ""
+				}
+			}
 
             let evalShowInfo = {}
             $.ajax({
@@ -134,13 +178,29 @@
 
             //初始化界面
             $("#show-title").text(evalShowInfo['script_info']['script_name'])
+			$("#script-name").text(evalShowInfo['script_info']['script_name'])
             $("#user-name").text(evalShowInfo['user_info']['user_name'])
             $("#show-intro").text(evalShowInfo['show_intro'])
             $("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
-            $("#showCover").attr('src', evalShowInfo['script_info']['script_cover'])
-            $("#script-cover").attr('src', evalShowInfo['script_info']['script_cover'])
-			if(evalShowInfo['script_info']['script_author'])
-            	$("#editor-name").text(`编剧：${evalShowInfo['script_info']['script_author']['content']}`)
+			let script_cover  = evalShowInfo['script_info']['script_cover']
+            $("#showCover").attr('src', script_cover)
+            $("#script-cover").attr('src', script_cover)
+			if(evalShowInfo['dialogues'][0]['dialogue_image']){
+				script_cover = evalShowInfo['dialogues'][0]['dialogue_image']
+			}
+			$("#showCover").attr('src', script_cover)
+			if(evalShowInfo['script_info']['user_info']) {
+
+				$("#author-name").text(evalShowInfo['script_info']['user_info']['user_name'])
+				$("#author-icon").attr('src', evalShowInfo['script_info']['user_info']['user_icon'])
+				// $("#author-intro").text(evalShowInfo['script_info']['user_info']['user_sign'])
+			}
+			$("#show-add-time").text(timestampToTime(evalShowInfo['show_add_time']))
+
+			$("#script-intro").append($(`<span>
+			${evalShowInfo['script_info']['script_intro'].replaceAll('\n', '<br/>')}
+			</span>`))
+
             let roles = evalShowInfo['show_role']
             for(let r in roles){
                 let role = $(`
@@ -149,7 +209,7 @@
                         <img alt="" class="user-icon" src="${roles[r]['user_icon']}">
                     </div>
                     <div>
-                        <span class="user-name ">${roles[r]['user_name']}</span>
+                        <span class="user-name">${roles[r]['user_name']}</span>
                     </div>
                     <div class="role-name">${roles[r]['role_name']}</div>
                 </a>`)

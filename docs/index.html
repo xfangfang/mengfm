@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="renderer" content="webkit">
-	<title>热门演绎秀mp3在线收听-麦萌对手戏</title>
+	<title>热门演绎秀在线收听-麦萌对手戏</title>
 	<meta name="keywords" content="热门,演绎秀,收听" />
 	<meta name="description" content="欢迎收听麦萌对手戏的热门演绎秀，首款手机约戏神器！求师傅、找伙伴、找CP、练戏感、求眼熟！来麦萌对手戏就可以了！" />
 	<meta itemprop="name" content="麦萌官网,麦萌对手戏,写剧本,配音" />
@@ -15,7 +15,7 @@
 	<style >
 		.show-content{
 			width: 150px;
-			margin: 10px;
+			margin: 8px;
 		}
 		.show-content img{
 			width: 100%;
@@ -23,7 +23,7 @@
 		#show-list {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-around;
+			justify-content: space-evenly;
 		}
 		#main {
 			width: 100%;
@@ -58,7 +58,7 @@
 	<section id="main">
 		<link rel="stylesheet" type="text/css" href="./assets/css/pclabels_index.css">
 <div class="main">
-	<div id="all-show">
+	<div id="all-show" style="padding: 15px 0;">
 		<h1 class="title font-dark-grey">/ 热门作品 /</h1>
 		<div id="show-list">
 		</div>
@@ -91,6 +91,8 @@
 		next_page = 'mobile_show.html'
 	}
 
+	_hmt.push(["_trackEvent","meng","home_mobile",equipment()['mobile']])
+
 
 	for(i in evalShowInfo){
 		let intro = evalShowInfo[i]['show_intro']
@@ -116,7 +118,7 @@
 	<footer id="footer-content">
 		<div id="content">
 			<div class="site-friendly-link" style="text-align: center">
-				<span>© 2022 麦萌的纪念站</span>
+				<a href="https://github.com/xfangfang/mengfm"><span>© 2022 麦萌的纪念站</span></a>>
 			</div>
 		</div>
 	</footer>

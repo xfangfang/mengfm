@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="renderer" content="webkit">
-	<title>mp3剧本演绎秀在线收听-麦萌对手戏</title>
+	<title>剧本演绎秀在线收听-麦萌对手戏</title>
 	<meta name="keywords" content="在线收听,mp3录音" />
 	<meta name="description" content="欢迎收听剧本演绎秀" />
 	<meta itemprop="name" content="麦萌官网,麦萌对手戏,写剧本,配音" />
@@ -111,6 +111,8 @@
 		if(equipment()['mobile']){
 			window.location.href=`./mobile_show.html?show=${show_id}`;
 		}
+
+		_hmt.push(["_trackEvent","meng","pc",show_id])
 
 		let evalShowInfo = {}
 		$.ajax({
