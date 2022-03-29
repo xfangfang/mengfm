@@ -46,6 +46,10 @@ class MengfmPipeline1:
         for i in info['script_info']['script_role']:
             i['role_icon'] = change2local(id, i['role_icon'])
 
+        author = info['script_info']['user_info']
+        if author:
+            info['script_info']['user_info']['user_icon'] = change2local(id, author['user_icon'])
+
         # dialogues
         attr = ['dialogue_bgm', 'phase_sound', 'dialogue_sound',
                 'dialogue_image', 'dialogue_bgm', 'dialogue_video', 'phase_bgm']

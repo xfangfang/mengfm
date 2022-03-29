@@ -66,6 +66,10 @@ class UserSpider(scrapy.Spider):
         for i in info['script_info']['script_role']:
             urls.append(i['role_icon'])
 
+        author = info['script_info']['user_info']
+        if author:
+            urls.append(author['user_icon'])
+
         # dialogues
         attr = ['dialogue_bgm', 'phase_sound', 'dialogue_sound',
                 'dialogue_image', 'dialogue_bgm', 'dialogue_video', 'phase_bgm']

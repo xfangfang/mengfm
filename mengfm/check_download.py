@@ -7,6 +7,7 @@ print(data_path)
 
 for root, dirs, files in os.walk(data_path):
     if root[-4:] == 'data':
+        print(dirs)
         continue
     # print(root, dirs, files)
     print(root)
@@ -26,6 +27,10 @@ for root, dirs, files in os.walk(data_path):
         urls.append(info['script_info']['script_cover'])
         for i in info['script_info']['script_role']:
             urls.append(i['role_icon'])
+
+        author = info['script_info']['user_info']
+        if author:
+            urls.append(author['user_icon'])
 
         # dialogues
         attr = ['dialogue_bgm', 'phase_sound', 'dialogue_sound',
