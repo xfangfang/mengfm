@@ -13,6 +13,8 @@ BOT_NAME = 'mengfm'
 SPIDER_MODULES = ['mengfm.spiders']
 NEWSPIDER_MODULE = 'mengfm.spiders'
 
+MENG_USER_ID = 885928
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'mengfm (+http://www.yourdomain.com)'

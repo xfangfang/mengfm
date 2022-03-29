@@ -1,9 +1,34 @@
-import scrapy
-from mengfm.items import MengfmItem
 import os
+import re
 import json
+import scrapy
+import requests
 from urllib.parse import urlparse
+
+from mengfm.items import MengfmItem
 from mengfm.pipelines import DOWNLOAD_PATH
+from mengfm.settings import MENG_USER_ID
+
+def get_user_shows(user_id):
+    url = "http://m.mengfm.com/index.php?c=member&a=loadmoreshowlist"
+    index = 1
+    headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    }
+    shows = []
+    try:
+        while True:
+            payload=f'startNum={index}&user_id={user_id}'
+            response = requests.request("POST", url, headers=headers, data=payload)
+            data = re.findall('show_id=([0-9]*)', json.loads(response.text)['content'])
+            if len(data) == 0:
+                break
+            shows += data
+            index += 10
+    except Exception as e:
+        print(e)
+
+    return shows
 
 
 class UserSpider(scrapy.Spider):
@@ -11,7 +36,7 @@ class UserSpider(scrapy.Spider):
     allowed_domains = ['www.mengfm.com']
     start_urls = []
     # 想要下载的show id 列表
-    items = [18701442,18701419,18643069,18629687,18533637,18496415,18496386,18496331,18447287,18415849,18073460,18073421,18073395,18073356,18046874,18046830,18046752,18046679,18026996,18026959,18026946,18024842,18013697,18013660,18013644,18013616,17985156,17985083,17964811,17964735,17964588,17925833,17384301,16768188,15822675,15301639,15301376,15301328,15301117,15289275,14157456,13178073,12861562,12397235,12397051,12396918,12364375,12364362,11938485,11607713,11336674,11256029,11255760,11255619,11191155,10973845,10854866,10688556,10687075,10681821,8992546,8992333,8991938,8991819,8991508,8991234,8985822,6613050]
+    items = get_user_shows(MENG_USER_ID)
     # items = [17925833]
 
     for i in items:
