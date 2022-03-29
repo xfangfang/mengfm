@@ -2,15 +2,17 @@
 
 通过爬虫获取广播剧数据用于个人留念
 
-### 如何记录自己的广播剧
+### 如何记录广播剧
 
-1. fork项目，删除 `docs/data` 下的demo数据  
-2. 自定义 `mengfm/spiders/meng_user.py` 中的 `items` 列表，此列表为单个广播剧的id列表，关于获取广播剧id的诸多方式请看附录  
-3. 补充上一条：如果只需要爬取某个人的所有广播剧，只需要修改 `mengfm/settings.py` 下的 `MENG_USER_ID`
+1. clone项目，删除 `docs/data` 下的所有示例数据  
+2. 自定义 `mengfm/spiders/meng_user.py` 中的 `items` 列表，此列表为广播剧的id列表，将所有你想留存的广播剧id填入此列表，关于获取广播剧id的诸多方式请看附录  
+3. 补充上一条：如果只需要爬取某个人的所有广播剧，只需要修改 `mengfm/settings.py` 下的 `MENG_USER_ID` 为他的用户id即可  
 4. 运行爬虫：`scrapy crawl user`  
 5. 检查爬虫结果：`python check_download.py` （可能存在部分图片未下载成功，这是因为爬虫设置了不重复下载，在 `mengfm/popelines.py` 设置 `dont_filter` 为True重新爬虫即可）  
 6. 生成首页数据：`python generate_index.py`
-7. 上传到github，仓库开启 `Github Pages`
+7. 上传到Github，仓库开启 `Github Pages`（注意选择部署根目录为：`docs`）
+
+⚠️：爬虫时请注意不要影响官方网站的正常使用，合理配置爬虫速度、爬虫时间。
 
 ### 附录
 
