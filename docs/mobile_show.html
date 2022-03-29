@@ -197,9 +197,12 @@
 			}
 			$("#show-add-time").text(timestampToTime(evalShowInfo['show_add_time']))
 
-			$("#script-intro").append($(`<span>
-			${evalShowInfo['script_info']['script_intro'].replaceAll('\n', '<br/>')}
-			</span>`))
+			if(evalShowInfo['script_info']['script_intro']){
+				$("#script-intro").append($(`<span>
+				${evalShowInfo['script_info']['script_intro'].replaceAll('\n', '<br/>')}
+				</span>`))
+			}
+
 
             let roles = evalShowInfo['show_role']
             for(let r in roles){
