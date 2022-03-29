@@ -17,6 +17,9 @@
 			width: 150px;
 			margin: 10px;
 		}
+		.show-content img{
+			width: 100%;
+		}
 		#show-list {
 			display: flex;
 			flex-wrap: wrap;
@@ -49,7 +52,7 @@
 </head>
 <body>
 	<header id="header-content">
-		<img alt="麦萌对手戏" id="logo" src="./assets/image/logo.png" style="margin-top: -4px;"  >
+		<img alt="麦萌对手戏" id="logo" src="./assets/image/logo.png" style="margin-top: -4px; margin-left: 8px"  >
 	</header>
 
 	<section id="main">
@@ -94,7 +97,7 @@
 		if(!intro) intro = ''
 		let show = $(`<div class="show-content">
 <a href="${next_page}?show=${evalShowInfo[i]['show_id']}">
-<img alt="要住在三楼" class="show-icon lazy" data-original="${evalShowInfo[i]['show_cover']}">
+<img alt="" class="show-icon lazy" data-original="${evalShowInfo[i]['show_cover']}">
 </a>
 <p class="script-name">
 <a class="font-dark-grey" href="${next_page}?show=${evalShowInfo[i]['show_id']}" title="">${evalShowInfo[i]['script_name']}</a></p>
@@ -113,7 +116,7 @@
 	<footer id="footer-content">
 		<div id="content">
 			<div class="site-friendly-link" style="text-align: center">
-				<span>麦萌的纪念站</span>
+				<span>© 2022 麦萌的纪念站</span>
 			</div>
 		</div>
 	</footer>
