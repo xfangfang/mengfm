@@ -203,7 +203,7 @@
 
 			if(evalShowInfo['script_info']['script_intro']){
 				$("#script-intro").append($(`<span>
-				${evalShowInfo['script_info']['script_intro'].replaceAll('\n', '<br/>')}
+				${evalShowInfo['script_info']['script_intro'].replace(new RegExp("\n", "gm"), '<br/>')}
 				</span>`))
 			}
 
