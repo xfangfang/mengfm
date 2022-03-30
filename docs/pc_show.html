@@ -149,9 +149,12 @@
 		$("#dialogue-content").text(first_dialogue['dialogue_content'])
 		let roles = evalShowInfo['script_info']['script_role']
 		for(let r in roles){
-			let role = $('<div><img class="user-icon" src="'+ roles[r]['role_icon'] +
-					'"><span class="user-name">'+roles[r]['role_name']+
-					'</span><p class="show-intro">'+roles[r]['role_intro']+'</p></div>')
+			let role_icon = './assets/image/user-default-icon.png'
+			if(roles[r]['role_icon']) role_icon = roles[r]['role_icon']
+			let role = $(`<div><img class="user-icon" src="${role_icon}">
+			<span class="user-name">${roles[r]['role_name']}</span>
+			<p class="show-intro">${roles[r]['role_intro']}</p>
+			</div>`)
 			$("#role-info").append(role)
 			if(first_dialogue['role_name'] === roles[r]['role_name']){
 				$("#role-icon").attr('src', roles[r]['role_icon'])
