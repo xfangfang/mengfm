@@ -16,8 +16,8 @@ Demo地址：https://xfangfang.github.io/mengfm/
 2. 自定义 `mengfm/spiders/meng_user.py` 中的 `items` 列表，此列表为广播剧的id列表，将所有你想留存的广播剧id填入此列表，关于获取广播剧id的诸多方式请看附录  
 3. 补充上一条：如果只需要爬取某个人的所有广播剧，只需要修改 `mengfm/settings.py` 下的 `MENG_USER_ID` 为他的用户id即可  
 4. 运行爬虫：`scrapy crawl user`  
-5. 检查爬虫结果：`python check_download.py` （可能存在部分图片未下载成功，这是因为爬虫设置了不重复下载，在 `mengfm/popelines.py` 设置 `dont_filter` 为True重新爬虫即可）  
-6. 生成首页数据：`python generate_index.py`
+5. 检查爬虫结果：`python mengfm/check_download.py` （可能存在部分图片未下载成功，这是因为爬虫设置了不重复下载，在 `mengfm/popelines.py` 设置 `dont_filter` 为True重新爬虫即可）  
+6. 生成首页数据：`python  mengfm/generate_index.py`
 7. 本地测试，项目根目录：`python -m http.server` 浏览器访问：`localhost:8000/docs`  
 8. 上传到Github部署，仓库开启 `Github Pages`（注意选择部署根目录为：`docs`）
 
