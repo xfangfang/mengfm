@@ -11,7 +11,7 @@
  limitations under the License.
  */
 
-const PRECACHE = 'precache-v1';
+const PRECACHE = 'precache-v2';
 const RUNTIME = 'runtime-v1';
 var PRECACHE_URLS = [
     './',
@@ -22,7 +22,6 @@ var PRECACHE_URLS = [
     './assets/js/equipment.js',
     './assets/js/flexible.js',
     './assets/js/flexible_css.js',
-    './assets/js/jquery.mCustomScrollbar.concat.min.js',
     './assets/js/loaders.css.js',
     './assets/js/mobilePlayer.js',
     './assets/js/pcPlayer.js',
@@ -36,7 +35,6 @@ var PRECACHE_URLS = [
     './assets/css/main.css',
     './assets/css/normalize.css',
     './assets/css/showplay-98e61c1cde.css',
-    './assets/css/jquery.mCustomScrollbar.css',
     './assets/css/index.css',
     './assets/image/logo.png',
     './assets/image/back-black-icon.png',
