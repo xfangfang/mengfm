@@ -1,0 +1,16 @@
+{
+  "name": "麦萌",
+  "description":"麦萌个人纪念版",
+  "orientation": "portrait-primary",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F88700",
+  "icons": [
+    {
+      "src": "/assets/image/share-logo.png",
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "type": "image/png"
+    }
+  ]
+}
