@@ -101,7 +101,7 @@
             </a>
 
 			<div class="role-info" id="author-info">
-                <span class="role-main-title">编剧：</span>
+                <span class="role-main-title">编剧</span>
 				<a class="role" >
                     <div class="role-icon-box no-img-src">
                         <img alt="" class="user-icon" id="author-icon" src="">
@@ -130,6 +130,21 @@
                 return null;
             }
 
+			function timestampToTime(timestamp) {
+				try{
+					let  date = new Date(timestamp * 1000);
+					let Y = date.getFullYear() + '年';
+					let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '月';
+					let D = date.getDate() + '日 ';
+					let h = date.getHours() + ':';
+					let m = date.getMinutes()// + ':';
+					// let s = date.getSeconds();
+					return Y+M+D+h+m;
+				} catch (e) {
+					return ""
+				}
+			}
+
             let show_id = getQueryString('show')
             if(!show_id){
                 console.log('错误的请求')
@@ -147,106 +162,73 @@
 
 			_hmt.push(["_trackEvent","meng","mobile",show_id])
 
-			function timestampToTime(timestamp) {
-				try{
-					let  date = new Date(timestamp * 1000);
-					let Y = date.getFullYear() + '年';
-					let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '月';
-					let D = date.getDate() + '日 ';
-					let h = date.getHours() + ':';
-					let m = date.getMinutes()// + ':';
-					// let s = date.getSeconds();
-					return Y+M+D+h+m;
-				} catch (e) {
-					return ""
+			fetch(`./data/${show_id}/info.json`).then(data => {
+				return data.json()
+			}).then(data => {
+				let evalShowInfo = data
+
+				//初始化界面
+				$("#show-title").text(evalShowInfo['script_info']['script_name'])
+				$("#script-name").text(evalShowInfo['script_info']['script_name'])
+				$("#user-name").text(evalShowInfo['user_info']['user_name'])
+				$("#show-intro").text(evalShowInfo['show_intro'])
+				$("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
+				let script_cover  = evalShowInfo['script_info']['script_cover']
+				$("#showCover").attr('src', script_cover)
+				$("#script-cover").attr('src', script_cover)
+				if(evalShowInfo['dialogues'][0]['dialogue_image']){
+					script_cover = evalShowInfo['dialogues'][0]['dialogue_image']
 				}
-			}
+				$("#showCover").attr('src', script_cover)
+				if(evalShowInfo['script_info']['user_info']) {
+					$("#author-name").text(evalShowInfo['script_info']['user_info']['user_name'])
+					$("#author-icon").attr('src', evalShowInfo['script_info']['user_info']['user_icon'])
+				}
+				$("#show-add-time").text(timestampToTime(evalShowInfo['show_add_time']))
 
-            let evalShowInfo = {}
-            $.ajax({
-                url : './data/'+show_id+'/info_local.json',
-                type : 'get',
-                async: false,
-                beforeSend : function(){
+				if(evalShowInfo['script_info']['script_intro']){
+					$("#script-intro").append($(`<span>
+					${evalShowInfo['script_info']['script_intro'].replace(new RegExp("\n", "gm"), '<br/>')}
+					</span>`))
+				}
+				let roles = evalShowInfo['show_role']
+				for(let r in roles){
+					let role = $(`
+					<a class="role" >
+						<div class="role-icon-box no-img-src">
+							<img alt="" class="user-icon" src="${roles[r]['user_icon']}">
+						</div>
+						<div>
+							<span class="user-name">${roles[r]['user_name']}</span>
+						</div>
+						<div class="role-name">${roles[r]['role_name']}</div>
+					</a>`)
+					$("#role-info").append(role)
+				}
 
-                },
-                success : function(data){
-                    console.log(data)
-                    evalShowInfo = eval(data)
-
-                },
-                error : function(){
-                    console.log('error getting show info')
-                }
-            })
-
-            //初始化界面
-            $("#show-title").text(evalShowInfo['script_info']['script_name'])
-			$("#script-name").text(evalShowInfo['script_info']['script_name'])
-            $("#user-name").text(evalShowInfo['user_info']['user_name'])
-            $("#show-intro").text(evalShowInfo['show_intro'])
-            $("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
-			let script_cover  = evalShowInfo['script_info']['script_cover']
-            $("#showCover").attr('src', script_cover)
-            $("#script-cover").attr('src', script_cover)
-			if(evalShowInfo['dialogues'][0]['dialogue_image']){
-				script_cover = evalShowInfo['dialogues'][0]['dialogue_image']
-			}
-			$("#showCover").attr('src', script_cover)
-			if(evalShowInfo['script_info']['user_info']) {
-
-				$("#author-name").text(evalShowInfo['script_info']['user_info']['user_name'])
-				$("#author-icon").attr('src', evalShowInfo['script_info']['user_info']['user_icon'])
-				// $("#author-intro").text(evalShowInfo['script_info']['user_info']['user_sign'])
-			}
-			$("#show-add-time").text(timestampToTime(evalShowInfo['show_add_time']))
-
-			if(evalShowInfo['script_info']['script_intro']){
-				$("#script-intro").append($(`<span>
-				${evalShowInfo['script_info']['script_intro'].replace(new RegExp("\n", "gm"), '<br/>')}
-				</span>`))
-			}
-
-
-            let roles = evalShowInfo['show_role']
-            for(let r in roles){
-                let role = $(`
-                <a class="role" >
-                    <div class="role-icon-box no-img-src">
-                        <img alt="" class="user-icon" src="${roles[r]['user_icon']}">
-                    </div>
-                    <div>
-                        <span class="user-name">${roles[r]['user_name']}</span>
-                    </div>
-                    <div class="role-name">${roles[r]['role_name']}</div>
-                </a>`)
-                $("#role-info").append(role)
-            }
-
-            //初始化播放器
-            var playerData = {
-                type : 'show',
-                playInfo : evalShowInfo,
-                playerEle : 'showContainer',
-                callBack : {
-                    error : function(msg){
-                        alert(msg);
-                    },
-
-                    onloaded : function(obj){
-                    }
-                }
-            };
-            var player = new player(playerData);
-
+				//初始化播放器
+				new player({
+					type : 'show',
+					playInfo : evalShowInfo,
+					playerEle : 'showContainer',
+					callBack : {
+						error : function(msg){
+							alert(msg);
+						},
+						onloaded : function(obj){
+						}
+					}
+				});
+			})
         </script>
-
 
 	</div>
 	<footer class="footer">
 		<div id="loading" class="ball-clip-rotate text-center hide">
 			<div></div>
 		</div>
+		<br/>
+		<br/>
 	</footer>
 
 

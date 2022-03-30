@@ -70,63 +70,62 @@
 
 	<section id="main">
 		<link rel="stylesheet" type="text/css" href="./assets/css/pclabels_index.css">
-<div class="main">
-	<div id="all-show" style="padding: 15px 0;">
-		<h1 class="title font-dark-grey">/ 热门作品 /</h1>
-		<div id="show-list">
+		<div class="main">
+			<div id="all-show" style="padding: 15px 0;">
+				<h1 class="title font-dark-grey">/ 热门作品 /</h1>
+				<div id="show-list">
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
 
-<script type="text/javascript">
-	let evalShowInfo = {}
-	$.ajax({
-		url : './data/info.json',
-		type : 'get',
-		async: false,
-		beforeSend : function(){
-
-		},
-		success : function(data){
-			console.log(data)
-			evalShowInfo = eval(data)
-
-		},
-		error : function(){
-			console.log('error getting show info')
+	<script type="text/javascript">
+		if (navigator.serviceWorker != null) {
+			navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+			  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+			}).catch(function (err) {
+			  console.log('ServiceWorker registration failed: ', err);
+			});
+		} else {
+			console.log('cannot use serviceWorker')
 		}
-	})
 
-	console.log(evalShowInfo)
+		_hmt.push(["_trackEvent","meng","home_mobile",equipment()['mobile']])
 
-	let next_page = 'pc_show.html'
-	if(equipment()['mobile']){
-		next_page = 'mobile_show.html'
-	}
+		let evalShowInfo = {}
+		fetch('./data/info.json').then(data => {
+			return data.json()
+		}).then(data => {
+			evalShowInfo = data
+			console.log(evalShowInfo)
+			let next_page = 'pc_show.html'
+			if(equipment()['mobile']){
+				next_page = 'mobile_show.html'
+			}
 
-	_hmt.push(["_trackEvent","meng","home_mobile",equipment()['mobile']])
+			for(i in evalShowInfo){
+				let intro = evalShowInfo[i]['show_intro']
+				if(!intro) intro = ''
+				let show = $(`<div class="show-content">
+				<a href="${next_page}?show=${evalShowInfo[i]['show_id']}">
+				<img alt="" class="show-icon lazy" data-original="${evalShowInfo[i]['show_cover']}">
+				</a>
+				<p class="script-name">
+				<a class="font-dark-grey" href="${next_page}?show=${evalShowInfo[i]['show_id']}" title="">${evalShowInfo[i]['script_name']}</a></p>
+				<p class="show-intro font-grey">${intro}</p></div>`)
+				$("#show-list").append(show)
+			}
 
 
-	for(i in evalShowInfo){
-		let intro = evalShowInfo[i]['show_intro']
-		if(!intro) intro = ''
-		let show = $(`<div class="show-content">
-<a href="${next_page}?show=${evalShowInfo[i]['show_id']}">
-<img alt="" class="show-icon lazy" data-original="${evalShowInfo[i]['show_cover']}">
-</a>
-<p class="script-name">
-<a class="font-dark-grey" href="${next_page}?show=${evalShowInfo[i]['show_id']}" title="">${evalShowInfo[i]['script_name']}</a></p>
-<p class="show-intro font-grey">${intro}</p></div>`)
-		$("#show-list").append(show)
-	}
+			$(function(){
+				$("img.lazy").lazyload({
+					 failure_limit : 150
+				});
+			});
 
+		})
+	</script>
 
-	$(function(){
-		$("img.lazy").lazyload({
-			 failure_limit : 150
-		});
-	});
-</script>	</section>
+	</section>
 
 	<footer id="footer-content">
 		<div id="content">
