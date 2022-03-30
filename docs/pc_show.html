@@ -45,7 +45,7 @@
 				<div id="show">
 					<div id="showContainer">
 						<div id="showTitle">
-							<h1 id="show-title">标题</h1>
+							<h1 id="show-title">加载中...</h1>
 						</div>
 						<img id="cover" src="">
 						<div id="dialogues">
@@ -72,8 +72,8 @@
 			<div class="right">
 				<div class="user-info">
 					<img class="user-icon" id="user-icon" src="">
-					<span class="user-name" id="user-name">用户</span>
-					<p class="show-intro" id="show-intro">介绍</p>
+					<span class="user-name" id="user-name"></span>
+					<p class="show-intro" id="show-intro"></p>
 				</div>
 				<br/>
 				<div class="user-info" id="role-info"></div>
@@ -119,75 +119,63 @@
 
 		_hmt.push(["_trackEvent","meng","pc",show_id])
 
-		let evalShowInfo = {}
-		$.ajax({
-			url : './data/'+show_id+'/info_local.json',
-			type : 'get',
-			async: false,
-			beforeSend : function(){
-
-			},
-			success : function(data){
-				console.log(data)
-				evalShowInfo = eval(data)
-
-			},
-			error : function(){
-				console.log('error getting show info')
-			}
-		})
-
-		//初始化界面
-		$("#show-title").text(evalShowInfo['script_info']['script_name'])
-		$("#user-name").text(evalShowInfo['user_info']['user_name'])
-		$("#show-intro").text(evalShowInfo['show_intro'])
-		$("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
-		$("#cover").attr('src', evalShowInfo['show_cover'])
-		let first_dialogue = evalShowInfo['dialogues'][0]
-		if(first_dialogue['role_name'])
-			$("#role-name").text(first_dialogue['role_name']+":")
-		$("#dialogue-content").text(first_dialogue['dialogue_content'])
-		let roles = evalShowInfo['script_info']['script_role']
-		for(let r in roles){
-			let role_icon = './assets/image/user-default-icon.png'
-			if(roles[r]['role_icon']) role_icon = roles[r]['role_icon']
-			let role = $(`<div><img class="user-icon" src="${role_icon}">
-			<span class="user-name">${roles[r]['role_name']}</span>
-			<p class="show-intro">${roles[r]['role_intro']}</p>
-			</div>`)
-			$("#role-info").append(role)
-			if(first_dialogue['role_name'] === roles[r]['role_name']){
-				$("#role-icon").attr('src', roles[r]['role_icon'])
-			}
-		}
-
-
-
-		//初始化播放器
-		var playerData = {
-			type : 'show',
-			playInfo : evalShowInfo,
-			playerEle : 'showContainer',
-			controlBar : 'controlBar',		//控制栏dom元素的id
-			callBack : {
-				error : function(msg){
-					alert(msg);
-				},
-
-				onloaded : function(obj){
+		var pc_player;
+		fetch(`./data/${show_id}/info_local.json`).then(data => {
+			$("#show-info-content").removeClass('hidden');
+			return data.json()
+		}).then(data => {
+			let evalShowInfo = data
+			console.log(data)
+			//初始化界面
+			$("#show-title").text(evalShowInfo['script_info']['script_name'])
+			$("#user-name").text(evalShowInfo['user_info']['user_name'])
+			$("#show-intro").text(evalShowInfo['show_intro'])
+			$("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
+			$("#cover").attr('src', evalShowInfo['show_cover'])
+			let first_dialogue = evalShowInfo['dialogues'][0]
+			if(first_dialogue['role_name'])
+				$("#role-name").text(first_dialogue['role_name']+":")
+			$("#dialogue-content").text(first_dialogue['dialogue_content'])
+			let roles = evalShowInfo['script_info']['script_role']
+			for(let r in roles){
+				let role_icon = './assets/image/user-default-icon.png'
+				if(roles[r]['role_icon']) role_icon = roles[r]['role_icon']
+				let role = $(`<div><img class="user-icon" src="${role_icon}">
+				<span class="user-name">${roles[r]['role_name']}</span>
+				<p class="show-intro">${roles[r]['role_intro']}</p>
+				</div>`)
+				$("#role-info").append(role)
+				if(first_dialogue['role_name'] === roles[r]['role_name']){
+					$("#role-icon").attr('src', roles[r]['role_icon'])
 				}
 			}
-		};
-		var player = new player(playerData);
+
+			//初始化播放器
+			pc_player = new player({
+				type : 'show',
+				playInfo : evalShowInfo,
+				playerEle : 'showContainer',
+				controlBar : 'controlBar',		//控制栏dom元素的id
+				callBack : {
+					error : function(msg){
+						alert(msg);
+					},
+
+					onloaded : function(obj){
+					}
+				}
+			});
+
+		})
 
 		//播放演绎秀
 		function playShow(){
-			player.play();
+			if(pc_player) pc_player.play();
 		}
 
 		//暂停演绎秀
 		function pauseShow(){
-			player.pause();
+			if(pc_player) pc_player.pause();
 		}
 
 	</script>

@@ -11,8 +11,8 @@
  limitations under the License.
  */
 
-const PRECACHE = 'precache-v0';
-const RUNTIME = 'runtime-v0';
+const PRECACHE = 'precache-v1';
+const RUNTIME = 'runtime-v1';
 var PRECACHE_URLS = [
     './',
     './index.html',
@@ -40,7 +40,8 @@ var PRECACHE_URLS = [
     './assets/css/index.css',
     './assets/image/logo.png',
     './assets/image/back-black-icon.png',
-    './assets/image/home-black-icon.png'
+    './assets/image/home-black-icon.png',
+    './assets/image/user-default-icon.png'
 ]
 
 // The install handler takes care of precaching the resources we always need.
@@ -57,7 +58,6 @@ self.addEventListener('activate', event => {
   const currentCaches = [PRECACHE, RUNTIME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
-        console.log(cacheNames)
       return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
     }).then(cachesToDelete => {
       return Promise.all(cachesToDelete.map(cacheToDelete => {
@@ -71,14 +71,11 @@ self.addEventListener('activate', event => {
 // If no response is found, it populates the runtime cache with the response
 // from the network before returning it to the page.
 self.addEventListener('fetch', event => {
-    console.log(event.request.url)
   if (event.request.url.endsWith('.mp3')) return;
   if (event.request.url.endsWith('manifest.json')) return;
   if (event.request.url.indexOf('index.php') !== -1) return;
   // Skip cross-origin requests, like those for Google Analytics.
   if (event.request.url.startsWith(self.location.origin)) {
-      console.log(event.request.url)
-      console.log(event.request)
     event.respondWith(
       caches.match(event.request, {'ignoreSearch': true}).then(cachedResponse => {
         if (cachedResponse) {

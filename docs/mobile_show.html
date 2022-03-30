@@ -45,6 +45,9 @@
 			padding-bottom: 0;
 			border-bottom: 0;
 		}
+		.hidden{
+			display: none;
+		}
 	</style>
     <script src="./assets/js/Utils.js"></script>
 	<script>
@@ -64,7 +67,7 @@
 			<div class="menu">
 				<a href="javascript:history.go(-1);"><img class="back-icon pull-left" src="./assets/image/back-black-icon.png"></a>
 				<a href="./index.html"><img class="home-icon pull-right" src="./assets/image/home-black-icon.png"></a>
-				<h1 id="show-title">标题</h1>
+				<h1 id="show-title">加载中...</h1>
 			</div>
 		</header>
 		<section id="showContainer" style="position:relative;z-index:1;width:100%;height:390px;background-color:black;display:block;overflow:hidden;">
@@ -80,13 +83,13 @@
             </div>
         </section>
 
-        <section class="show-info-content">
+        <section class="show-info-content hidden" id="show-info-content">
             <div class="show-info">
                 <div class="user-icon-box">
-                    <img alt="作者" class="user-icon no-img-src" id="user-icon" src="">
+                    <img alt="" class="user-icon no-img-src" id="user-icon" src="">
                 </div>
-                <span class="user-name" id="user-name">作者</span>
-                <p class="show-intro" id="show-intro">简介</p>
+                <span class="user-name" id="user-name"></span>
+                <p class="show-intro" id="show-intro"></p>
             </div>
             <a class="script-info" >
                 <span class="script-title">剧本</span>
@@ -95,7 +98,7 @@
                 </div>
 
                 <div class="name-info">
-                    <span class="script-name" id="script-name">剧本</span>
+                    <span class="script-name" id="script-name"></span>
                     <div class="editor-name" id="show-add-time"></div>
                 </div>
             </a>
@@ -162,11 +165,12 @@
 
 			_hmt.push(["_trackEvent","meng","mobile",show_id])
 
-			fetch(`./data/${show_id}/info.json`).then(data => {
+			fetch(`./data/${show_id}/info_local.json`).then(data => {
+				$("#show-info-content").removeClass('hidden');
 				return data.json()
 			}).then(data => {
 				let evalShowInfo = data
-
+				console.log(data)
 				//初始化界面
 				$("#show-title").text(evalShowInfo['script_info']['script_name'])
 				$("#script-name").text(evalShowInfo['script_info']['script_name'])

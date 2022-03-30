@@ -2,6 +2,14 @@
 
 通过爬虫获取广播剧数据用于个人留念
 
+Demo地址：https://xfangfang.github.io/mengfm/
+
+支持PWA：  
+- **android**: Chrome打开Demo地址，点击 `右上角菜单` 选择 `添加到主屏幕`
+
+- **ios**: Safari打开Demo地址，点击 `分享` 选择 `添加到主屏幕`
+
+
 ### 如何记录广播剧
 
 1. clone项目（template分支包含最简单的示例数据，可以加速拉取的速度） `git clone --depth=1  -b template https://github.com/xfangfang/mengfm.git`  
