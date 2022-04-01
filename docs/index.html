@@ -98,7 +98,13 @@
 			console.log('cannot use serviceWorker')
 		}
 
-		_hmt.push(["_trackEvent","meng","home_mobile",equipment()['mobile']])
+		let mobile = false;
+		if(equipment()['mobile']){
+			mobile = true;
+			$('head').append('<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">');
+		}
+
+		_hmt.push(["_trackEvent","meng","home_mobile", mobile])
 
 		let evalShowInfo = {}
 		fetch('./data/info.json').then(data => {
@@ -107,7 +113,7 @@
 			evalShowInfo = data
 			console.log(evalShowInfo)
 			let next_page = 'pc_show.html'
-			if(equipment()['mobile']){
+			if(mobile){
 				next_page = 'mobile_show.html'
 			}
 
@@ -118,9 +124,10 @@
 				<a href="${next_page}?show=${evalShowInfo[i]['show_id']}">
 				<img alt="" class="show-icon lazy" data-original="${evalShowInfo[i]['show_cover']}">
 				</a>
-				<p class="script-name">
-				<a class="font-dark-grey" href="${next_page}?show=${evalShowInfo[i]['show_id']}" title="">${evalShowInfo[i]['script_name']}</a></p>
-				<p class="show-intro font-grey">${intro}</p></div>`)
+				<p class="script-name" style="margin: 4px 0 2px 0">
+				<a class="font-dark-grey" href="${next_page}?show=${evalShowInfo[i]['show_id']}" title="">${evalShowInfo[i]['script_name']}</a>
+				</p>
+				<span class="show-intro font-grey">${intro}</span></div>`)
 				$("#show-list").append(show)
 			}
 

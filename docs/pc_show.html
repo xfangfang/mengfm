@@ -73,8 +73,20 @@
 			<div class="right">
 				<div class="user-info">
 					<img class="user-icon" id="user-icon" src="">
-					<span class="user-name" id="user-name"></span>
-					<p class="show-intro" id="show-intro"></p>
+					<div class="user-info-right">
+						<span class="user-name" id="user-name"></span>
+						<span class="user-sign" id="user-sign"></span>
+					</div>
+					<p class="show-time" id="show-intro"></p>
+				</div>
+				<br/>
+				<div class="user-info">
+					<img class="user-icon" id="author-icon" src="">
+					<div class="user-info-right">
+						<span class="user-name" id="author-name"></span>
+						<span class="user-sign" id="author-sign"></span>
+					</div>
+					<p class="show-intro" id="author-intro"></p>
 				</div>
 				<br/>
 				<div class="user-info" id="role-info"></div>
@@ -91,6 +103,26 @@
 			let r = window.location.search.substr(1).match(reg);
 			if (r != null) return unescape(r[2]);
 			return null;
+		}
+
+		function prefixZero(num, n) {
+				return (Array(n).join(0) + num).slice(-n);
+			}
+
+		function timestampToTime(timestamp) {
+			console.log(timestamp)
+			try{
+				let  date = new Date(timestamp * 1000);
+				let Y = date.getFullYear() + '年';
+				let M = prefixZero(date.getMonth()+1,2) + '月';
+				let D = prefixZero(date.getDate(),2) + '日 ';
+				let h = prefixZero(date.getHours(),2) + ':';
+				let m = prefixZero(date.getMinutes(),2)// + ':';
+				// let s = date.getSeconds();
+				return Y+M+D+h+m;
+			} catch (e) {
+				return ""
+			}
 		}
 
 		let show_id = getQueryString('show')
@@ -114,11 +146,28 @@
 			let evalShowInfo = data
 			console.log(data)
 			//初始化界面
+			if(evalShowInfo['script_info']['script_name']){
+				document.title=evalShowInfo['script_info']['script_name']+' - 麦萌对手戏';
+			}
 			$("#show-title").text(evalShowInfo['script_info']['script_name'])
-			$("#user-name").text(evalShowInfo['user_info']['user_name'])
+			$("#user-name").text(evalShowInfo['user_info']['user_name'] + '（作者）')
 			$("#show-intro").text(evalShowInfo['show_intro'])
 			$("#user-icon").attr('src', evalShowInfo['user_info']['user_icon'])
 			$("#cover").attr('src', evalShowInfo['show_cover'])
+
+			$("#user-sign").text(timestampToTime(evalShowInfo['show_add_time']))
+			if(evalShowInfo['script_info']['user_info']) {
+				$("#author-name").text(evalShowInfo['script_info']['user_info']['user_name'] + '（编剧）')
+				$("#author-sign").text(evalShowInfo['script_info']['user_info']['user_sign'])
+				$("#author-sign").attr('alt', evalShowInfo['script_info']['user_info']['user_sign'])
+				$("#author-icon").attr('src', evalShowInfo['script_info']['user_info']['user_icon'])
+			}
+			if(evalShowInfo['script_info']['script_intro']){
+				$("#author-intro").append($(`<span>
+				${evalShowInfo['script_info']['script_intro'].replace(new RegExp("\n", "gm"), '<br/>')}
+				</span>`))
+			}
+
 			let first_dialogue = evalShowInfo['dialogues'][0]
 			if(first_dialogue['role_name'])
 				$("#role-name").text(first_dialogue['role_name']+":")
@@ -128,7 +177,7 @@
 				let role_icon = './assets/image/user-default-icon.png'
 				if(roles[r]['role_icon']) role_icon = roles[r]['role_icon']
 				let role = $(`<div><img class="user-icon" src="${role_icon}">
-				<span class="user-name">${roles[r]['role_name']}</span>
+				<span class="role-name">${roles[r]['role_name']}</span>
 				<p class="show-intro">${roles[r]['role_intro']}</p>
 				</div>`)
 				$("#role-info").append(role)

@@ -11,7 +11,7 @@
  limitations under the License.
  */
 
-const PRECACHE = 'precache-v2';
+const PRECACHE = 'precache-v3';
 const RUNTIME = 'runtime-v1';
 var PRECACHE_URLS = [
     './',
@@ -30,7 +30,6 @@ var PRECACHE_URLS = [
     './assets/js/jquery-3.1.1.min.js',
     './assets/js/jquery.lazyload.min.js',
     './assets/css/pclayout-d53383e15e.css',
-    './assets/css/pclabels_index.css',
     './assets/css/loaders.css',
     './assets/css/main.css',
     './assets/css/normalize.css',

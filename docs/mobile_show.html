@@ -129,14 +129,19 @@
                 return null;
             }
 
+			function prefixZero(num, n) {
+				return (Array(n).join(0) + num).slice(-n);
+			}
+
 			function timestampToTime(timestamp) {
+				console.log(timestamp)
 				try{
 					let  date = new Date(timestamp * 1000);
 					let Y = date.getFullYear() + '年';
-					let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '月';
-					let D = date.getDate() + '日 ';
-					let h = date.getHours() + ':';
-					let m = date.getMinutes()// + ':';
+					let M = prefixZero(date.getMonth()+1,2) + '月';
+					let D = prefixZero(date.getDate(),2) + '日 ';
+					let h = prefixZero(date.getHours(),2) + ':';
+					let m = prefixZero(date.getMinutes(),2)// + ':';
 					// let s = date.getSeconds();
 					return Y+M+D+h+m;
 				} catch (e) {
@@ -168,6 +173,9 @@
 				let evalShowInfo = data
 				console.log(data)
 				//初始化界面
+				if(evalShowInfo['script_info']['script_name']){
+					document.title=evalShowInfo['script_info']['script_name']+' - 麦萌对手戏';
+				}
 				$("#show-title").text(evalShowInfo['script_info']['script_name'])
 				$("#script-name").text(evalShowInfo['script_info']['script_name'])
 				$("#user-name").text(evalShowInfo['user_info']['user_name'])
