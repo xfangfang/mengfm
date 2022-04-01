@@ -8,6 +8,26 @@
   "background_color": "#F88700",
   "icons": [
     {
+      "src": "./assets/image/share-logo-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/image/share-logo-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/image/share-logo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/image/share-logo-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
       "src": "./assets/image/share-logo.png",
       "sizes": "512x512",
       "type": "image/png"

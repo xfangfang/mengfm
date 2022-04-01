@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="renderer" content="webkit">
-	<title>热门演绎秀在线收听-麦萌对手戏</title>
+	<title>剧本演绎秀-麦萌对手戏</title>
 	<meta name="keywords" content="热门,演绎秀,收听" />
 	<meta name="description" content="欢迎收听麦萌对手戏的热门演绎秀，首款手机约戏神器！求师傅、找伙伴、找CP、练戏感、求眼熟！来麦萌对手戏就可以了！" />
-	<meta itemprop="name" content="麦萌官网,麦萌对手戏,写剧本,配音" />
+	<meta itemprop="name" content="麦萌纪念站,麦萌对手戏,写剧本,配音" />
     <meta itemprop="description" content="首款手机约戏神器！求师傅、找伙伴、找CP、练戏感、求眼熟！来麦萌对手戏就可以了！这里是声控、配音、PIA戏爱好者的聚集地！还可以在这里写属于自己的剧本，让更多人来演绎！" />
 	<meta name="HandheldFriendly" content="true">
 	<meta name="format-detection" content="telephone=no, email=no">
@@ -21,8 +21,9 @@
 	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 	<link rel="bookmark" type="image/x-icon" href="./favicon.ico">
 	<link rel="apple-mobile-web-app-title" content="麦萌">
-	<link rel="apple-touch-icon" sizes="57x57 72x72 144x144" href="./assets/image/share-logo.png">
-	<link rel="icon" type="image/png" sizes="512x512" href="./assets/image/share-logo.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./assets/image/share-logo-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./assets/image/share-logo-144x144.png">
+	<link rel="apple-touch-icon" sizes="512x512" href="./assets/image/share-logo.png">
 	<link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./assets/css/pclayout-d53383e15e.css">
 	<style >
@@ -34,19 +35,28 @@
 			width: 100%;
 		}
 		#show-list {
-			display: flex;
-			flex-wrap: wrap;
+			display: grid;
 			justify-content: space-evenly;
+			grid-template-columns: repeat(auto-fit, minmax(0, 166px));
 		}
 		#main {
 			width: 100%;
 			background-color: #fff;
+			margin: 20px 0 0 0;
 		}
 		#footer-content #content  {
 			width: 100%;
 		}
 		#header-content {
 			width: 100%;
+		}
+		#all-show {
+			padding: 15px 0;
+		}
+		#all-show .title {
+			text-align: center;
+			font-size: 18px;
+			font-weight: 400;
 		}
 	</style>
 	<script type="text/javascript" src="./assets/js/equipment.js"></script>
@@ -69,9 +79,8 @@
 	</header>
 
 	<section id="main">
-		<link rel="stylesheet" type="text/css" href="./assets/css/pclabels_index.css">
 		<div class="main">
-			<div id="all-show" style="padding: 15px 0;">
+			<div id="all-show">
 				<h1 class="title font-dark-grey">/ 热门作品 /</h1>
 				<div id="show-list">
 				</div>
