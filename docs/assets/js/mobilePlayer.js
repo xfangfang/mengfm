@@ -1158,7 +1158,7 @@ function(e) {
 						e.src = t
 						if(!e.gainNode){
 							try{
-
+								audioContext.resume();
 								let source = audioContext.createMediaElementSource(e);
 								e.gainNode = audioContext.createGain();
 								source.connect(e.gainNode);
