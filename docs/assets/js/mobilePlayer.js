@@ -1154,7 +1154,22 @@ function(e) {
 			{
 				key: "_loadAudio",
 				value: function(e, t) {
-					null !== t && (e.src = t, e.load())
+					if(t !== null){
+						e.src = t
+						if(!e.gainNode){
+							try{
+
+								let source = audioContext.createMediaElementSource(e);
+								e.gainNode = audioContext.createGain();
+								source.connect(e.gainNode);
+								e.gainNode.connect(audioContext.destination);
+							}
+							catch (error) {
+								console.log("_loadAudio error", error, e.gainNode)
+							}
+						}
+						e.load()
+					}
 				}
 			},
 			{
@@ -1171,6 +1186,9 @@ function(e) {
 					if (!n.play && e._checkString(n.url)) {
 						null != a.audio_bgm && a.audio_bgm.pause();
 						var u = n.audio;
+						try{
+							u.gainNode.gain.value = n.volume / 100
+						}catch (e) {}
 						u.volume = n.volume / 100,
 						u.play(),
 						a.audio_bgm = u
@@ -1182,6 +1200,9 @@ function(e) {
 					100);
 					else if (e._checkString(l.url)) {
 						var A = l.audio;
+						try{
+							A.gainNode.gain.value = l.volume / 100
+						}catch (e) {}
 						A.volume = l.volume / 100,
 						A.play(),
 						a.audio_sound = A
@@ -1286,6 +1307,7 @@ function(e) {
 			return _createClass(e, [{
 				key: "initplayer",
 				value: function() {
+					window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
 					var t = this,
 					a = this.playInfo,
 					u = {

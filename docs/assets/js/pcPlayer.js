@@ -619,7 +619,22 @@ function(e, a, t) {
 		{
 			key: "_loadAudio",
 			value: function(e, a) {
-				null !== a && (e.src = a, e.load())
+				if(a !== null){
+					e.src = a
+					if(!e.gainNode){
+						try{
+
+							let source = audioContext.createMediaElementSource(e);
+							e.gainNode = audioContext.createGain();
+							source.connect(e.gainNode);
+							e.gainNode.connect(audioContext.destination);
+						}
+						catch (error) {
+							console.log("_loadAudio error", error, e.gainNode)
+						}
+					}
+					e.load()
+				}
 			}
 		},
 		{
@@ -636,6 +651,9 @@ function(e, a, t) {
 				if (!n.play && e._checkString(n.url)) {
 					null != t.audio_bgm && t.audio_bgm.pause();
 					var u = n.audio;
+					try{
+						u.gainNode.gain.value = n.volume / 100
+					}catch (e){}
 					u.volume = n.volume / 100,
 					u.play(),
 					t.audio_bgm = u
@@ -647,6 +665,9 @@ function(e, a, t) {
 				100);
 				else if (e._checkString(l.url)) {
 					var d = l.audio;
+					try{
+						d.gainNode.gain.value = l.volume / 100
+					}catch (e){}
 					d.volume = l.volume / 100,
 					d.play(),
 					t.audio_sound = d
@@ -965,6 +986,7 @@ function(e, a, t) {
 		return _createClass(e, [{
 			key: "initplayer",
 			value: function() {
+				window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
 				var a = this,
 				t = this.playInfo,
 				s = this.type,
