@@ -910,9 +910,9 @@
                 "user_sex": 2,
                 "user_name": "小拇指",
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
-                "user_level": 35,
+                "user_level": 36,
                 "user_sound": null,
-                "user_score": 6458,
+                "user_score": 6528,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -964,9 +964,9 @@
             "user_sex": 2,
             "user_name": "小拇指",
             "user_icon": "data/15289181/0CZo2aTeqZQJffvJ.jpg",
-            "user_level": 35,
+            "user_level": 36,
             "user_sound": null,
-            "user_score": 6458,
+            "user_score": 6528,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -1014,16 +1014,16 @@
         "user_id": "885928",
         "user_name": "小拇指",
         "user_icon": "data/15289181/0CZo2aTeqZQJffvJ.jpg",
-        "user_level": 35,
+        "user_level": 36,
         "level": {
-            "level_id": 35,
+            "level_id": 36,
             "level_rank": "资深新秀",
             "level_honor": [
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png"
             ],
-            "level_score": 6120,
+            "level_score": 6475,
             "level_show": 0
         },
         "fans": null

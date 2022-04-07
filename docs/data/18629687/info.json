@@ -14,8 +14,8 @@
         70,
         100
     ],
-    "show_hear": 8,
-    "show_listen": 784,
+    "show_hear": 9,
+    "show_listen": 863,
     "show_comment": 0,
     "show_praise": 0,
     "show_score": 0,
@@ -33,7 +33,7 @@
     "show_mp3": null,
     "show_mp4": null,
     "show_mp4_duration": 0,
-    "show_out_listen": 16,
+    "show_out_listen": 26,
     "show_out_hear": 4,
     "show_best": 0,
     "show_mp4_download": null,
@@ -2142,7 +2142,7 @@
         "script_show": 188,
         "script_intro": "我叫许迹，是这片土地上一个又一个一模一样的女子\n可叹那年海棠开的如此盛丽，死在这样的季节里，于我又何尝不是解脱，不过，我终是最不喜海棠，喜爱海棠花的是我嫡亲的姐姐\n————\n感谢干音\n双姐儿：孟聊@骆渐乌\n许拂：洛君@【叁拾柒°】洛君\n苏承：鲤屿@【叁拾柒°】鲤驴i\n此本送给小羽迹@『云上』羽迹   我写专属本还写be了，呜呜呜呜致歉\n听说会吞，写来防吞",
         "user_id": "8241564",
-        "script_elite": 1,
+        "script_elite": 0,
         "script_comment": 111,
         "script_praise": 1572,
         "script_add_time": 1629368405,
@@ -2274,11 +2274,11 @@
             "user_id": "8241564",
             "user_sex": 2,
             "user_name": "【叁拾柒°】佛系小编",
-            "user_icon": "http://res.mengfm.com/user_icon/a111/138/030/Nm9PHllztYdv8Whx.jpg",
+            "user_icon": "http://res.mengfm.com/user_icon/a111/336/330/FG7RKJk460y1Qldn.jpg",
             "user_sign": "喜欢，加油，努力，带劲……嗯，还是不想写……",
             "user_level": 84,
             "user_sound": "少女音 其他音 ",
-            "user_score": 44261,
+            "user_score": 45457,
             "user_member": 1,
             "user_year_member": null,
             "user_member_status": -1,
@@ -2296,7 +2296,14 @@
                 "http://res.mengfm.com/deduct_attachment/level_icon/4.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/4.png"
             ],
-            "items": null
+            "items": [
+                {
+                    "user_id": "8241564",
+                    "item_icon": "http://res03.mengfm.com/deduct_attachment/item_icon/1_hakui.png",
+                    "item_color": null,
+                    "item_type": 1
+                }
+            ]
         },
         "roles": [
             {
@@ -2306,9 +2313,9 @@
                 "user_sex": 2,
                 "user_name": "小拇指",
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
-                "user_level": 35,
+                "user_level": 36,
                 "user_sound": null,
-                "user_score": 6458,
+                "user_score": 6528,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -2332,10 +2339,10 @@
                 "cooper_lead": 0,
                 "user_sex": 1,
                 "user_name": "東江不吃姜",
-                "user_icon": "http://res.mengfm.com/user_icon/a111/122/314/eQ8GSue8ifCu9ZAU.jpg",
+                "user_icon": "http://res.mengfm.com/user_icon/a109/765/256/SUDajODxjoGRlCZC.jpg",
                 "user_level": 100,
                 "user_sound": "其他音 ",
-                "user_score": 183670,
+                "user_score": 185779,
                 "vin": {
                     "vin_type": "1",
                     "vin_icon": "http://res.mengfm.com/deduct_attachment/medal_icon/vin_yellow.png",
@@ -2362,9 +2369,9 @@
             "user_sex": 2,
             "user_name": "小拇指",
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
-            "user_level": 35,
+            "user_level": 36,
             "user_sound": null,
-            "user_score": 6458,
+            "user_score": 6528,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -2388,10 +2395,10 @@
             "cooper_lead": 0,
             "user_sex": 1,
             "user_name": "東江不吃姜",
-            "user_icon": "http://res.mengfm.com/user_icon/a111/122/314/eQ8GSue8ifCu9ZAU.jpg",
+            "user_icon": "http://res.mengfm.com/user_icon/a109/765/256/SUDajODxjoGRlCZC.jpg",
             "user_level": 100,
             "user_sound": "其他音 ",
-            "user_score": 183670,
+            "user_score": 185779,
             "vin": {
                 "vin_type": "1",
                 "vin_icon": "http://res.mengfm.com/deduct_attachment/medal_icon/vin_yellow.png",
@@ -2414,16 +2421,16 @@
         "user_id": "885928",
         "user_name": "小拇指",
         "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
-        "user_level": 35,
+        "user_level": 36,
         "level": {
-            "level_id": 35,
+            "level_id": 36,
             "level_rank": "资深新秀",
             "level_honor": [
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png"
             ],
-            "level_score": 6120,
+            "level_score": 6475,
             "level_show": 0
         },
         "fans": null
