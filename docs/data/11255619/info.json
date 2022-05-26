@@ -1,7 +1,7 @@
 {
     "show_id": 11255619,
-    "show_icon": "http://res03.mengfm.com/deduct_attachment/program/a00/67/69/V6VbI9YJSkGI251y.jpg",
-    "show_cover": "http://res03.mengfm.com/deduct_attachment/program/a00/67/69/wYJo25UPUQSi2284.jpg",
+    "show_icon": "http://res02.mengfm.com/deduct_attachment/program/a00/67/69/V6VbI9YJSkGI251y.jpg",
+    "show_cover": "http://res02.mengfm.com/deduct_attachment/program/a00/67/69/wYJo25UPUQSi2284.jpg",
     "show_times": 0,
     "show_cooper": 0,
     "show_intro": "我刚演绎了一个剧本，大家快来听听吧。",
@@ -582,8 +582,8 @@
     "script_info": {
         "script_id": 70046,
         "script_name": "傻子走了，骗子傻了。",
-        "script_icon": "http://res03.mengfm.com/deduct_attachment/program/a40/838/836/5fb2097a3ce871f2_icon.jpg",
-        "script_cover": "http://res03.mengfm.com/deduct_attachment/program/a40/838/836/5fb2097a3ce871f2.jpg",
+        "script_icon": "http://res02.mengfm.com/deduct_attachment/program/a40/838/836/5fb2097a3ce871f2_icon.jpg",
+        "script_cover": "http://res02.mengfm.com/deduct_attachment/program/a40/838/836/5fb2097a3ce871f2.jpg",
         "script_dialogue": 20,
         "script_show": 3255,
         "script_intro": "谁没遇到过傻子\r\n谁又没当过骗子、",
@@ -684,7 +684,7 @@
                 "role_sex": 2,
                 "role_intro": "温柔伤感",
                 "script_id": 70046,
-                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a32/924/341/f1c8426be1503a55.jpg",
+                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a32/924/341/f1c8426be1503a55.jpg",
                 "role_sound": [
                     "170",
                     "171"
@@ -696,7 +696,7 @@
                 "role_sex": 1,
                 "role_intro": "温柔伤感",
                 "script_id": 70046,
-                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a32/596/881/6c157d3f9d8653f1.jpg",
+                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a32/596/881/6c157d3f9d8653f1.jpg",
                 "role_sound": [
                     "164",
                     "165"
@@ -743,7 +743,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6528,
+                "user_score": 6612,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -800,7 +800,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6528,
+            "user_score": 6612,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,

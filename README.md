@@ -6,7 +6,7 @@ Demo地址：https://xfangfang.github.io/mengfm/
 
 ### 如何使用
 
-1. clone 项目（template 分支包含最简单的示例数据，可以加快拉取的速度）： 
+1. clone 项目（template 分支包含最简单的示例数据，可以加快拉取的速度）：
 
     ```shell
     git clone --depth=1  -b template https://github.com/xfangfang/mengfm.git
@@ -16,7 +16,7 @@ Demo地址：https://xfangfang.github.io/mengfm/
 2. 自定义 `mengfm/spiders/meng_user.py` 中的 `items` 列表，此列表为广播剧的id列表，将所有你想留存的广播剧id填入此列表，关于获取广播剧id的诸多方式请看附录  
 3. 补充上一条：如果只需要爬取某个人的所有广播剧，只需要修改 `mengfm/settings.py` 下的 `MENG_USER_ID` 为他的用户id即可  
 4. 运行爬虫：`scrapy crawl user`  
-5. 检查爬虫结果：`python mengfm/check_download.py` （可能存在部分图片未下载成功，这是因为爬虫设置了不重复下载，在 `mengfm/popelines.py` 设置 `dont_filter` 为True重新爬虫即可）  
+5. 检查爬虫结果：`python mengfm/check_download.py` （可能存在部分文件未下载成功，这是因为爬虫设置了不重复下载，在 `mengfm/popelines.py` 设置 `dont_filter` 为True重新爬虫即可；如果遭遇某些文件404，可在 meng_user.py 94行修改替换，一般来说将 http://res 、http://res02 、http://res03 之间互相替换可以解决 ）  
 6. 生成首页数据：`python  mengfm/generate_index.py`
 7. 本地测试，项目根目录：`python -m http.server 8080` 浏览器访问：`localhost:8080/docs`  
 8. 补充上一条：本地部署测试推荐使用：`npx http-server -c-1` ，性能更好还可以禁止浏览器缓存，避免service worker缓存影响开发   
@@ -93,4 +93,3 @@ get_user_shows(885928)
 - 支持PWA，媲美原生应用
   - **android**: Chrome打开Demo地址，点击 `右上角菜单` 选择 `添加到主屏幕`
   - **ios**: Safari打开Demo地址，点击 `分享` 选择 `添加到主屏幕`
-

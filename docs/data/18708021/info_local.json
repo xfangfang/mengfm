@@ -2358,7 +2358,7 @@
         "script_icon": "data/18708021/1b526a247c7ea330.jpg",
         "script_cover": "data/18708021/1b526a247c7ea330.jpg",
         "script_dialogue": 77,
-        "script_show": 20,
+        "script_show": 23,
         "script_intro": "他被关在声音的笼子。",
         "user_id": "705433",
         "script_elite": 0,
@@ -2468,9 +2468,9 @@
             "user_name": "【叁拾柒°】代雨千寻",
             "user_icon": "data/18708021/E8rVAd4Rr0rwJ4Gt.jpg",
             "user_sign": "前程有日月，勋绩在河源。",
-            "user_level": 78,
+            "user_level": 79,
             "user_sound": "少御 ",
-            "user_score": 32426,
+            "user_score": 33413,
             "user_member": 1,
             "user_year_member": null,
             "user_member_status": -1,
@@ -2495,7 +2495,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6528,
+                "user_score": 6612,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -2520,9 +2520,9 @@
                 "user_sex": 1,
                 "user_name": "李同暖",
                 "user_icon": "http://res.mengfm.com/user_icon/a115/460/121/7Q4ftgDSdkf1SkDA.jpg",
-                "user_level": 34,
+                "user_level": 35,
                 "user_sound": "老鸨音 其他音 ",
-                "user_score": 5923,
+                "user_score": 6297,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -2537,14 +2537,7 @@
                     "http://res.mengfm.com/deduct_attachment/level_icon/2.png",
                     "http://res.mengfm.com/deduct_attachment/level_icon/2.png"
                 ],
-                "items": [
-                    {
-                        "user_id": "1595911",
-                        "item_icon": "http://res03.mengfm.com/deduct_attachment/item_icon/1_kelegai2.png",
-                        "item_color": null,
-                        "item_type": 1
-                    }
-                ],
+                "items": null,
                 "role_name": "费一奕"
             }
         ]
@@ -2559,7 +2552,7 @@
             "user_icon": "data/18708021/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6528,
+            "user_score": 6612,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -2584,9 +2577,9 @@
             "user_sex": 1,
             "user_name": "李同暖",
             "user_icon": "data/18708021/7Q4ftgDSdkf1SkDA.jpg",
-            "user_level": 34,
+            "user_level": 35,
             "user_sound": "老鸨音 其他音 ",
-            "user_score": 5923,
+            "user_score": 6297,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -2601,14 +2594,7 @@
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/2.png"
             ],
-            "items": [
-                {
-                    "user_id": "1595911",
-                    "item_icon": "http://res03.mengfm.com/deduct_attachment/item_icon/1_kelegai2.png",
-                    "item_color": null,
-                    "item_type": 1
-                }
-            ],
+            "items": null,
             "role_name": "费一奕"
         }
     ],
@@ -2632,14 +2618,7 @@
         "fans": null
     },
     "record_score": 0,
-    "items": [
-        {
-            "user_id": "1595911",
-            "item_icon": "http://res03.mengfm.com/deduct_attachment/item_icon/1_kelegai2.png",
-            "item_color": null,
-            "item_type": 1
-        }
-    ],
+    "items": null,
     "is_collect": 0,
     "user_praise": 0,
     "user_show_count": 0,

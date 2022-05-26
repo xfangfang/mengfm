@@ -653,7 +653,7 @@
             "user_sign": "我们终会再见，对吧",
             "user_level": 64,
             "user_sound": "帝王 ",
-            "user_score": 20717,
+            "user_score": 20823,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -668,14 +668,7 @@
                 "http://res.mengfm.com/deduct_attachment/level_icon/3.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/3.png"
             ],
-            "items": [
-                {
-                    "user_id": "410763",
-                    "item_icon": "http://res03.mengfm.com/deduct_attachment/item_icon/1_quan.png",
-                    "item_color": null,
-                    "item_type": 1
-                }
-            ]
+            "items": null
         },
         "roles": [
             {
@@ -687,7 +680,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6528,
+                "user_score": 6612,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -714,7 +707,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6528,
+                "user_score": 6612,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -744,7 +737,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6528,
+            "user_score": 6612,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -771,7 +764,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6528,
+            "user_score": 6612,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
