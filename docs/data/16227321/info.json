@@ -42,7 +42,7 @@
             "dialogue_id": 117758266,
             "dialogue_content": "在一间昏暗狭长的密室中，一个佝偻的人影蜷缩在角落里，她似乎在等待着什么......",
             "dialogue_delay": 2000,
-            "dialogue_image": "http://res03.mengfm.com/deduct_attachment/program/a106/18/81/960303fc0c9a5a7c.jpg",
+            "dialogue_image": "http://res02.mengfm.com/deduct_attachment/program/a106/18/81/960303fc0c9a5a7c.jpg",
             "dialogue_sound": null,
             "dialogue_sound_duration": 0,
             "dialogue_sound_vols": 0,
@@ -853,8 +853,8 @@
     "script_info": {
         "script_id": 477185,
         "script_name": "献祭",
-        "script_icon": "http://res03.mengfm.com/deduct_attachment/program/a106/18/81/960303fc0c9a5a7c.jpg",
-        "script_cover": "http://res03.mengfm.com/deduct_attachment/program/a106/18/81/960303fc0c9a5a7c.jpg",
+        "script_icon": "http://res02.mengfm.com/deduct_attachment/program/a106/18/81/960303fc0c9a5a7c.jpg",
+        "script_cover": "http://res02.mengfm.com/deduct_attachment/program/a106/18/81/960303fc0c9a5a7c.jpg",
         "script_dialogue": 30,
         "script_show": 19,
         "script_intro": "一场名为狩猎者的恐怖直播悄然上演，蒋方显然已经是猎人眼中的猎物，而隐藏在背后“观众”究竟是谁......（死者的谎言第二季）",
@@ -933,7 +933,7 @@
                 "role_sex": 2,
                 "role_intro": "年轻的心理医生，面对棘手问题往往能给出惊人的答案",
                 "script_id": 477185,
-                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a13/55/32/e0c4efa88a7c748a.jpg",
+                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a13/55/32/e0c4efa88a7c748a.jpg",
                 "role_sound": [
                     "170"
                 ]
@@ -944,7 +944,7 @@
                 "role_sex": 1,
                 "role_intro": "神秘侦探，不知是否与蒋方有着相同的目的",
                 "script_id": 477185,
-                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a81/87/79/3019ce20d7ec79a4.jpg",
+                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a81/87/79/3019ce20d7ec79a4.jpg",
                 "role_sound": [
                     "164"
                 ]
@@ -962,10 +962,10 @@
             "user_sex": 0,
             "user_name": "湐鸢",
             "user_icon": "http://res.mengfm.com/user_icon/a94/001/132/XNjDdMujqVjZ1O3j.jpg",
-            "user_sign": "如果你突然打了个喷嚏",
+            "user_sign": "新的一周开始了",
             "user_level": 82,
             "user_sound": "妖孽 ",
-            "user_score": 38941,
+            "user_score": 39904,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -995,7 +995,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6612,
+                "user_score": 6687,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -1022,7 +1022,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a118/176/744/JK4gzVkxYq04rRHH.jpg",
                 "user_level": 58,
                 "user_sound": "青年 公子 大叔 ",
-                "user_score": 17055,
+                "user_score": 17068,
                 "vin": {
                     "vin_group": true,
                     "vin_group_type": 0,
@@ -1048,7 +1048,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6612,
+            "user_score": 6687,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -1075,7 +1075,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a118/176/744/JK4gzVkxYq04rRHH.jpg",
             "user_level": 58,
             "user_sound": "青年 公子 大叔 ",
-            "user_score": 17055,
+            "user_score": 17068,
             "vin": {
                 "vin_group": true,
                 "vin_group_type": 0,

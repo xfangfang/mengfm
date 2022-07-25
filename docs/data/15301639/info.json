@@ -1147,8 +1147,8 @@
     "script_info": {
         "script_id": 292170,
         "script_name": "特殊宠爱",
-        "script_icon": "http://res03.mengfm.com/deduct_attachment/program/a60/193/752/520433be175dfaf7.jpg",
-        "script_cover": "http://res03.mengfm.com/deduct_attachment/program/a60/193/752/520433be175dfaf7.jpg",
+        "script_icon": "http://res02.mengfm.com/deduct_attachment/program/a60/193/752/520433be175dfaf7.jpg",
+        "script_cover": "http://res02.mengfm.com/deduct_attachment/program/a60/193/752/520433be175dfaf7.jpg",
         "script_dialogue": 38,
         "script_show": 9,
         "script_intro": "不要恨我，这只是我对你的忠诚与爱。",
@@ -1224,7 +1224,7 @@
                 "role_sex": 2,
                 "role_intro": "绝望，清冷。",
                 "script_id": 292170,
-                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a84/543/133/6f058a66945d6dc8.jpg",
+                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a84/543/133/6f058a66945d6dc8.jpg",
                 "role_sound": [
                     "170"
                 ]
@@ -1235,7 +1235,7 @@
                 "role_sex": 1,
                 "role_intro": "深情而疯狂。",
                 "script_id": 292170,
-                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a03/105/827/dbfd5c8ff01e91f7.jpg",
+                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a03/105/827/dbfd5c8ff01e91f7.jpg",
                 "role_sound": [
                     "163",
                     "164"
@@ -1283,7 +1283,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6612,
+                "user_score": 6687,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -1310,7 +1310,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a118/434/726/iW2sWI6jPSpS1HsD.jpg",
                 "user_level": 85,
                 "user_sound": "青年音 ",
-                "user_score": 48301,
+                "user_score": 49191,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -1339,7 +1339,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6612,
+            "user_score": 6687,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -1366,7 +1366,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a118/434/726/iW2sWI6jPSpS1HsD.jpg",
             "user_level": 85,
             "user_sound": "青年音 ",
-            "user_score": 48301,
+            "user_score": 49191,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,

@@ -1,7 +1,7 @@
 {
     "show_id": 10687075,
-    "show_icon": "http://res02.mengfm.com/deduct_attachment/program/a74/772/071/x4Se0S2tWfvP7peJ.jpg",
-    "show_cover": "http://res02.mengfm.com/deduct_attachment/program/a74/772/071/T9ZLg0GnddRk7ww1.jpg",
+    "show_icon": "http://res03.mengfm.com/deduct_attachment/program/a74/772/071/x4Se0S2tWfvP7peJ.jpg",
+    "show_cover": "http://res03.mengfm.com/deduct_attachment/program/a74/772/071/T9ZLg0GnddRk7ww1.jpg",
     "show_times": 0,
     "show_cooper": 0,
     "show_intro": "长得都够不着电话还谈恋爱，现在的小孩子，世风日下哦～",
@@ -1097,8 +1097,8 @@
     "script_info": {
         "script_id": 231177,
         "script_name": "别的小朋友都回家了",
-        "script_icon": "http://res02.mengfm.com/deduct_attachment/program/a62/842/319/2035bad1b46a37fc.jpg",
-        "script_cover": "http://res02.mengfm.com/deduct_attachment/program/a62/842/319/2035bad1b46a37fc.jpg",
+        "script_icon": "http://res03.mengfm.com/deduct_attachment/program/a62/842/319/2035bad1b46a37fc.jpg",
+        "script_cover": "http://res03.mengfm.com/deduct_attachment/program/a62/842/319/2035bad1b46a37fc.jpg",
         "script_dialogue": 34,
         "script_show": 283,
         "script_intro": "歪 你在吗 是我 我有事跟你讲 你先别挂电话啦 听我把话讲完 很短哒 我身上只有一块五啦 都全部用来打电话了 电话亭我够不到 别的小朋友都有人抱起来 不过我会踮脚哦 我今天看见你接别的小朋友回家了哦 没关系 我可以自己回去哒 我很厉害哒 但是我要回自己的家了啦 不去你那里了哦 我",
@@ -1201,7 +1201,7 @@
                 "role_sex": 2,
                 "role_intro": "软萌萌的妹子 声音有些难演绎",
                 "script_id": 231177,
-                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a63/663/291/6117e0831a9fc149.jpg",
+                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a63/663/291/6117e0831a9fc149.jpg",
                 "role_sound": [
                     "168",
                     "169"
@@ -1213,7 +1213,7 @@
                 "role_sex": 1,
                 "role_intro": "霸气大总攻 然而有些花心",
                 "script_id": 231177,
-                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a83/584/954/5448b2a9db58bab7.jpg",
+                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a83/584/954/5448b2a9db58bab7.jpg",
                 "role_sound": [
                     "164",
                     "167"
@@ -1260,7 +1260,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6612,
+                "user_score": 6687,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -1317,7 +1317,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6612,
+            "user_score": 6687,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,

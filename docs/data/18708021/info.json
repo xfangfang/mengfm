@@ -1,7 +1,7 @@
 {
     "show_id": 18708021,
-    "show_icon": "http://res02.mengfm.com/deduct_attachment/program/a107/52/55/Kb74cQqcFN4U1asX.jpg",
-    "show_cover": "http://res02.mengfm.com/deduct_attachment/program/a107/52/55/GS3mxzNiadT0EKeg.jpg",
+    "show_icon": "http://res03.mengfm.com/deduct_attachment/program/a107/52/55/Kb74cQqcFN4U1asX.jpg",
+    "show_cover": "http://res03.mengfm.com/deduct_attachment/program/a107/52/55/GS3mxzNiadT0EKeg.jpg",
     "show_times": 0,
     "show_cooper": 0,
     "show_intro": null,
@@ -2355,10 +2355,10 @@
     "script_info": {
         "script_id": 584198,
         "script_name": "他被关在声音的笼子里",
-        "script_icon": "http://res02.mengfm.com/deduct_attachment/program/a110/18/72/1b526a247c7ea330.jpg",
-        "script_cover": "http://res02.mengfm.com/deduct_attachment/program/a110/18/72/1b526a247c7ea330.jpg",
+        "script_icon": "http://res03.mengfm.com/deduct_attachment/program/a110/18/72/1b526a247c7ea330.jpg",
+        "script_cover": "http://res03.mengfm.com/deduct_attachment/program/a110/18/72/1b526a247c7ea330.jpg",
         "script_dialogue": 77,
-        "script_show": 23,
+        "script_show": 24,
         "script_intro": "他被关在声音的笼子。",
         "user_id": "705433",
         "script_elite": 0,
@@ -2434,7 +2434,7 @@
                 "role_sex": 1,
                 "role_intro": "后期成长的反社会人格",
                 "script_id": 584198,
-                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a119/55/51/c5e8fae2ddd67aed.jpg",
+                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a119/55/51/c5e8fae2ddd67aed.jpg",
                 "role_sound": [
                     "164",
                     "163"
@@ -2446,7 +2446,7 @@
                 "role_sex": 2,
                 "role_intro": "男女皆可，警察",
                 "script_id": 584198,
-                "role_icon": "http://res02.mengfm.com/deduct_attachment/program/a106/79/92/ac764923e887d147.jpg",
+                "role_icon": "http://res03.mengfm.com/deduct_attachment/program/a106/79/92/ac764923e887d147.jpg",
                 "role_sound": [
                     "169",
                     "170",
@@ -2468,9 +2468,9 @@
             "user_name": "【叁拾柒°】代雨千寻",
             "user_icon": "http://res.mengfm.com/user_icon/a118/705/952/E8rVAd4Rr0rwJ4Gt.jpg",
             "user_sign": "前程有日月，勋绩在河源。",
-            "user_level": 79,
+            "user_level": 80,
             "user_sound": "少御 ",
-            "user_score": 33413,
+            "user_score": 34444,
             "user_member": 1,
             "user_year_member": null,
             "user_member_status": -1,
@@ -2479,11 +2479,19 @@
                 "vin_group_type": null,
                 "vin_group_id": null
             },
-            "level_rank": "新晋明星",
+            "level_rank": "进阶明星",
             "level_honor": [
+                "http://res.mengfm.com/deduct_attachment/level_icon/4.png",
                 "http://res.mengfm.com/deduct_attachment/level_icon/4.png"
             ],
-            "items": null
+            "items": [
+                {
+                    "user_id": "705433",
+                    "item_icon": "http://res03.mengfm.com/deduct_attachment/item_icon/2_hua5.png",
+                    "item_color": "#C6C5ED",
+                    "item_type": 2
+                }
+            ]
         },
         "roles": [
             {
@@ -2495,7 +2503,7 @@
                 "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
                 "user_level": 36,
                 "user_sound": null,
-                "user_score": 6612,
+                "user_score": 6687,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -2520,9 +2528,9 @@
                 "user_sex": 1,
                 "user_name": "李同暖",
                 "user_icon": "http://res.mengfm.com/user_icon/a115/460/121/7Q4ftgDSdkf1SkDA.jpg",
-                "user_level": 35,
+                "user_level": 36,
                 "user_sound": "老鸨音 其他音 ",
-                "user_score": 6297,
+                "user_score": 6581,
                 "user_member": 0,
                 "user_year_member": null,
                 "user_member_status": 0,
@@ -2552,7 +2560,7 @@
             "user_icon": "http://res.mengfm.com/user_icon/a93/064/907/0CZo2aTeqZQJffvJ.jpg",
             "user_level": 36,
             "user_sound": null,
-            "user_score": 6612,
+            "user_score": 6687,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,
@@ -2577,9 +2585,9 @@
             "user_sex": 1,
             "user_name": "李同暖",
             "user_icon": "http://res.mengfm.com/user_icon/a115/460/121/7Q4ftgDSdkf1SkDA.jpg",
-            "user_level": 35,
+            "user_level": 36,
             "user_sound": "老鸨音 其他音 ",
-            "user_score": 6297,
+            "user_score": 6581,
             "user_member": 0,
             "user_year_member": null,
             "user_member_status": 0,

@@ -11,7 +11,7 @@
  limitations under the License.
  */
 
-const PRECACHE = 'precache-v5';
+const PRECACHE = 'precache-v6';
 const RUNTIME = 'runtime-v2';
 var PRECACHE_URLS = [
     './',
@@ -88,7 +88,7 @@ self.addEventListener('fetch', event => {
                 });
               });
             } catch (e) {
-                
+
             }
         });
       })
